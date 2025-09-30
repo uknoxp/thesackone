@@ -1,34 +1,78 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mourinho no Benfica</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <section class="hero-section">
-    <img id="mourinho-photo" src="mourinho.jpg" alt="José Mourinho">
-    <h1>José Mourinho</h1>
-    <h2>Treinador do Benfica</h2>
-    <div id="money-total">€0</div>
-    <div class="benfica-status">
-      <p>Tempo no Benfica:</p>
-      <div id="benfica-timer">0 DAYS, 0 HOURS, 0 MINUTES, 0 SECONDS</div>
-    </div>
-  </section>
+// --- 1. BENFICA SURVIVAL COUNTER ---
+const benficaStartDate = new Date('September 18, 2025 10:00:00').getTime();
+const counterElement = document.getElementById('benfica-timer');
 
-  <!-- Modal para PWA -->
-  <div id="pwa-suggestion-modal" class="pwa-modal">
-    <div class="pwa-modal-content">
-      <h4 id="pwa-title"></h4>
-      <p id="pwa-message"></p>
-      <p id="pwa-instructions-ios" style="display:none"></p>
-      <p id="pwa-instructions-android" style="display:none"></p>
-      <button id="pwa-close-button"></button>
-    </div>
-  </div>
+function updateCounter() {
+  const now = new Date().getTime();
+  const difference = now - benficaStartDate;
 
-  <script src="script.js"></script>
-</body>
-</html>
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+  counterElement.textContent = `${days} DAYS, ${hours} HOURS, ${minutes} MINUTES, ${seconds} SECONDS`;
+}
+
+updateCounter();
+setInterval(updateCounter, 1000);
+
+// --- 2. PWA SUGGESTION MODAL (SIMPLIFICADO) ---
+const modal = document.getElementById('pwa-suggestion-modal');
+const closeButton = document.getElementById('pwa-close-button');
+const instructionsIOS = document.getElementById('pwa-instructions-ios');
+const instructionsAndroid = document.getElementById('pwa-instructions-android');
+
+const translations = {
+  pt: {
+    title: "Adicionar ao Ecrã Principal?",
+    message: "Obtenha o acesso mais rápido! Esta página pode ser adicionada ao seu ecrã principal.",
+    instructions_ios: "Se usa Safari/iPhone: Clique no ícone de partilha e escolha \"Adicionar ao Ecrã Principal\".",
+    instructions_android: "Se usa Chrome/Android: Clique no menu (3 pontos) e escolha \"Instalar Aplicação\".",
+    close: "Fechar e continuar",
+  },
+  en: {
+    title: "Add to Home Screen?",
+    message: "Get the fastest access! This page can be added to your home screen.",
+    instructions_ios: "If you're on Safari/iPhone: Click the share icon and choose \"Add to Home Screen\".",
+    instructions_android: "If you're on Chrome/Android: Click the menu (3 dots) and choose \"Install App\".",
+    close: "Close and continue",
+  }
+};
+
+let userLang = (navigator.language || "en").slice(0, 2).toLowerCase();
+const langData = translations[userLang] || translations.en;
+
+function detectBrowser() {
+  const ua = navigator.userAgent;
+  if (/android/i.test(ua) && /chrome/i.test(ua)) {
+    instructionsAndroid.style.display = 'block';
+    instructionsAndroid.textContent = langData.instructions_android;
+  } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+    instructionsIOS.style.display = 'block';
+    instructionsIOS.textContent = langData.instructions_ios;
+  }
+}
+
+function applyTranslation() {
+  document.getElementById('pwa-title').textContent = langData.title;
+  document.getElementById('pwa-message').textContent = langData.message;
+  closeButton.textContent = langData.close;
+  detectBrowser();
+}
+
+function showModal() {
+  if (localStorage.getItem('pwaDismissed') !== 'true') {
+    applyTranslation();
+    modal.style.display = 'flex';
+  }
+}
+
+function dismissModal() {
+  modal.style.display = 'none';
+  localStorage.setItem('pwaDismissed', 'true');
+}
+
+closeButton.addEventListener('click', dismissModal);
+window.addEventListener('load', () => setTimeout(showModal, 2000));
+
