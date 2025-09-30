@@ -1,0 +1,393 @@
+:root {
+    --color-primary: #1a1a1a; 
+    --color-secondary: #DAA520; 
+    --color-text: #f0f0f0;
+    --color-background: #ffffff;
+    --timeline-offset: 150px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* HEADER AND MAIN COUNTER */
+.hero-section {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 80px 20px 40px 20px; 
+    position: relative;
+}
+
+/* Estilo para a imagem de Mourinho */
+#mourinho-photo {
+    width: 150px; /* Largura base */
+    height: 150px; /* Altura base */
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover;
+    border: 5px solid var(--color-secondary); /* Borda dourada */
+    margin-bottom: 20px;
+}
+
+/* Ajuste para ecrãs maiores */
+@media (min-width: 768px) {
+    #mourinho-photo {
+        width: 200px;
+        height: 200px;
+    }
+}
+/* Fim dos Estilos para a Imagem */
+
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+.hero-section h2 {
+    font-size: 1.8em;
+    color: var(--color-secondary);
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* MONEY TOTAL */
+#money-total {
+    font-size: 4em;
+    font-weight: 900;
+    color: var(--color-secondary);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.status {
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+/* NEW COUNTER STYLE */
+.benfica-status {
+    margin-top: 30px;
+    color: var(--color-secondary);
+}
+
+.benfica-status p {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+#benfica-timer {
+    font-size: 2em;
+    font-weight: 900;
+    color: white; 
+}
+
+/* INDIVIDUAL AWARDS SECTION - CSS */
+.individual-awards {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 40px 20px;
+    border-top: 5px solid var(--color-secondary);
+    text-align: left;
+    margin-top: 60px; /* Separates from the timeline */
+}
+
+.individual-awards h3 {
+    font-size: 2em;
+    color: var(--color-secondary);
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.awards-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.award-category {
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.award-category h4 {
+    color: white;
+    font-size: 1.2em;
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.award-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.award-category li {
+    font-size: 0.9em;
+    line-height: 1.6;
+    padding: 2px 0;
+    border-left: 3px solid var(--color-secondary);
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+
+/* TIMELINE SECTION */
+.timeline-section {
+    padding: 60px 20px 0 20px; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline-section h2 {
+    color: var(--color-primary);
+    margin-bottom: 50px;
+    font-size: 2em;
+    border-bottom: 3px solid var(--color-secondary);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* TIMELINE CARD STYLE */
+.timeline-card {
+    background-color: #f9f9f9;
+    border-left: 5px solid var(--color-primary); 
+    padding: 20px 20px 20px 20px; 
+    margin-bottom: 30px;
+    text-align: left;
+    position: relative;
+    margin-left: var(--timeline-offset); 
+}
+
+.timeline-card h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+    font-size: 1.5em;
+    padding-left: 20px; 
+}
+
+.timeline-card.fired {
+    border-left-color: var(--color-secondary); 
+}
+
+/* THE YEAR (DATA-YEAR) */
+.timeline-card::before {
+    content: attr(data-year);
+    position: absolute;
+    top: 20px;
+    left: calc(-1 * var(--timeline-offset)); 
+    background: var(--color-primary);
+    color: white;
+    padding: 5px 10px;
+    font-weight: 700;
+    font-size: 1.1em;
+    width: 80px; 
+    text-align: right; 
+    transform: translateX(35px); 
+    border-radius: 3px;
+}
+
+/* TIMELINE DOT */
+.timeline-card::after {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: -5px; 
+    width: 15px;
+    height: 15px;
+    background: var(--color-primary);
+    border: 2px solid white;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.timeline-card.fired::after {
+    background: var(--color-secondary);
+}
+
+/* TROPHIES SECTION */
+.trophies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 0 10px 20px; 
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+.trophy-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80px; 
+}
+
+.trophy-icon {
+    width: 40px; 
+    height: 40px;
+    object-fit: contain;
+}
+
+.trophy-count {
+    font-weight: 900;
+    color: var(--color-primary);
+    font-size: 1.5em;
+    line-height: 1;
+    margin-top: 5px;
+}
+
+.trophy-name {
+    font-size: 0.8em;
+    color: #666;
+    line-height: 1.1;
+}
+
+.timeline-card .indemnization {
+    font-weight: 700;
+    color: var(--color-secondary);
+    font-size: 1.3em;
+    margin-top: 10px;
+    display: block;
+    padding-left: 20px;
+}
+
+.timeline-card.fired .indemnization {
+    color: var(--color-secondary);
+    font-weight: 900;
+}
+
+.timeline-card.current {
+    border: 5px dashed var(--color-secondary);
+}
+
+/* PWA SUGGESTION MODAL STYLES */
+.pwa-modal {
+    display: none; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.pwa-modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 350px;
+    text-align: center;
+    color: var(--color-primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pwa-modal-content h4 {
+    color: var(--color-secondary);
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+.pwa-modal-content p {
+    margin-bottom: 20px;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.pwa-modal-content button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.pwa-modal-content button:hover {
+    background-color: #333;
+}
+
+.pwa-modal-content .close-btn {
+    background-color: transparent;
+    color: #999;
+    font-size: 0.9em;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.pwa-modal-content .close-btn:hover {
+    color: var(--color-primary);
+    background-color: transparent;
+}
+
+/* FOOTER SUPPORT SECTION */
+.support-footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 30px 20px;
+    border-top: 3px solid var(--color-secondary);
+    text-align: center;
+}
+
+.support-footer p {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.support-footer a {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: 900;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.support-footer a:hover {
+    background-color: #ffc107;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 2.5em; }
+    #money-total { font-size: 3em; }
+    .timeline-card {
+        margin-left: 20px; 
+    }
+    .timeline-card::before {
+        left: -10px;
+        top: 10px;
+        width: auto;
+        text-align: left;
+        transform: translateX(0); 
+    }
+    .awards-grid {
+        grid-template-columns: 1fr;
+    }
+}
