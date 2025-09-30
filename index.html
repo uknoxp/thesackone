@@ -1,371 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="google-adsense-account" content="ca-pub-2177050428602252">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO -->
-    <title>JOSÉ MOURINHO: THE SACK KING | The €108M Man</title>
-    <meta name="description" content="Explore the full career timeline of José Mourinho, The Sack King, with trophies, sackings, and compensation details.">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="JOSÉ MOURINHO: THE SACK KING">
-    <meta property="og:description" content="Timeline of José Mourinho's career: trophies, sackings and €108M compensation history.">
-    <meta property="og:image" content="images/mourinho.jpg">
-    <meta property="og:type" content="website">
-
-    <!-- Fonts & Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVTW5TR4M8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XVTW5TR4M8');
-    </script>
-
-    <!-- Google Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2177050428602252"
-        crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>José Mourinho - Timeline</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="hero-section">
-        <img src="images/mourinho.jpg" alt="José Mourinho smiling on the pitch" id="mourinho-photo">
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <img id="mourinho-photo" src="mourinho.jpg" alt="José Mourinho">
+    <h1>José Mourinho</h1>
+    <h2>The Special One</h2>
 
-        <h1>JOSÉ MOURINHO: THE SACK KING</h1>
-        <h2>A Global Timeline of Success and Compensation</h2>
+    <div id="money-total">€0</div>
+    <p class="status">Total Indemnizações Recebidas</p>
 
-        <p class="status">TOTAL COMPENSATION FROM SACKINGS (7 Times):</p>
-        <div id="money-total">€ 108,100,000</div>
+    <div class="benfica-status">
+      <p>Tempo desde que recusou o Benfica:</p>
+      <div id="benfica-timer">00:00:00</div>
+    </div>
+  </section>
 
-        <div class="benfica-status">
-            <p>MOURINHO IS AT BENFICA SINCE SEPTEMBER 18, 2025.</p>
-            <p style="font-size: 1.5em; margin: 10px 0;">HIS SURVIVAL CLOCK SHOWS:</p>
-            <div id="benfica-timer"></div>
+  <!-- TIMELINE SECTION -->
+  <section class="timeline-section">
+    <h2>Carreira</h2>
+
+    <div class="timeline-card" data-year="2004">
+      <h3>FC Porto</h3>
+      <div class="trophies-container">
+        <div class="trophy-item">
+          <img src="ucl.png" class="trophy-icon" alt="UCL">
+          <div class="trophy-count">1</div>
+          <div class="trophy-name">Champions League</div>
         </div>
+      </div>
     </div>
 
-    <!-- Google Ad -->
-    <div style="text-align: center; margin: 30px auto; max-width: 900px;">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2177050428602252" 
-             data-ad-slot="5071892769" 
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+    <div class="timeline-card fired" data-year="2007">
+      <h3>Chelsea <strong class="fired-text">FIRED</strong></h3>
+      <span class="indemnization">€18M</span>
     </div>
 
-    <section class="timeline-section" aria-label="Career timeline of José Mourinho">
-        <h2>Career Timeline (Principal Manager)</h2>
-
-        <div class="timeline-card" data-year="2000">
-            <h3>BENFICA (Portugal) - 1st Spell</h3>
-            <p><strong>Duration:</strong> 2.5 Months (10 Games)</p>
-            <div class="trophies-container">
-                <p style="padding-left: 0;">No Trophies Won.</p>
-            </div>
-            <p><strong>Status:</strong> Voluntary Resignation</p>
+    <div class="timeline-card" data-year="2010">
+      <h3>Inter de Milão</h3>
+      <div class="trophies-container">
+        <div class="trophy-item">
+          <img src="ucl.png" class="trophy-icon" alt="UCL">
+          <div class="trophy-count">1</div>
+          <div class="trophy-name">Champions League</div>
         </div>
-
-        <div class="timeline-card" data-year="2001-2002">
-            <h3>UNIÃO DE LEIRIA (Portugal)</h3>
-            <p><strong>Duration:</strong> 7 Months</p>
-            <div class="trophies-container">
-                <p style="padding-left: 0;">No Trophies Won.</p>
-            </div>
-            <p><strong>Status:</strong> Mutual Consent (Left for FC Porto)</p>
-        </div>
-
-        <div class="timeline-card" data-year="2002-2004">
-            <h3>FC PORTO (Portugal)</h3>
-            <p><strong>Duration:</strong> 2 Years, 5 Months</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="trophies/champions.png" alt="Champions League Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Champions League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/europa.png" alt="UEFA Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">UEFA Cup</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/league-pt.png" alt="Portuguese League Trophy" class="trophy-icon">
-                    <span class="trophy-count">2</span>
-                    <span class="trophy-name">Portuguese League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/cup-pt.png" alt="Portuguese Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Portuguese Cup</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/supercup-pt.png" alt="Portuguese Super Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Portuguese Super Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> Mutual Consent (Left for Chelsea)</p>
-        </div>
-
-        <div class="timeline-card fired" data-year="2004-2007">
-            <h3>CHELSEA (England) - 1st Spell</h3>
-            <p><strong>Duration:</strong> 3 Years, 3 Months</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="trophies/league-uk.png" alt="Premier League Trophy" class="trophy-icon">
-                    <span class="trophy-count">2</span>
-                    <span class="trophy-name">Premier League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/cup-uk-national.png" alt="FA Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">FA Cup</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">2</span>
-                    <span class="trophy-name">English League Cup</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/supercup-uk.png" alt="Community Shield Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">English Super Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> <strong class="fired-text">FIRED</strong> (2007)</p>
-            <span class="indemnization">COMPENSATION: € 20.9 Million</span>
-        </div>
-
-        <div class="timeline-card" data-year="2008-2010">
-            <h3>INTER MILAN (Italy)</h3>
-            <p><strong>Duration:</strong> 2 Years</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="trophies/champions.png" alt="Champions League Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Champions League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/league-it.png" alt="Serie A Trophy" class="trophy-icon">
-                    <span class="trophy-count">2</span>
-                    <span class="trophy-name">Italian League (Serie A)</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/cup-it-national.png" alt="Coppa Italia Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Italian Cup (Coppa Italia)</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/supercup-it.png" alt="Italian Super Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Italian Super Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> Mutual Consent (Left for Real Madrid)</p>
-        </div>
-
-        <div class="timeline-card fired" data-year="2010-2013">
-            <h3>REAL MADRID (Spain)</h3>
-            <p><strong>Duration:</strong> 3 Years</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="trophies/league-es.png" alt="La Liga Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Spanish League (La Liga)</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/cup-es-national.png" alt="Copa del Rey Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Copa del Rey</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/supercup-es.png" alt="Spanish Super Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Spanish Super Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> <strong class="fired-text">FIRED</strong> (2013)</p>
-            <span class="indemnization">COMPENSATION: € 19.7 Million</span>
-        </div>
-
-        <div class="timeline-card fired" data-year="2013-2015">
-            <h3>CHELSEA (England) - 2nd Spell</h3>
-            <p><strong>Duration:</strong> 2 Years, 5 Months</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="trophies/league-uk.png" alt="Premier League Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Premier League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">English League Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> <strong class="fired-text">FIRED</strong> (2015)</p>
-            <span class="indemnization">COMPENSATION: € 9.6 Million</span>
-        </div>
-
-        <div class="timeline-card fired" data-year="2016-2018">
-            <h3>MANCHESTER UNITED (England)</h3>
-            <p><strong>Duration:</strong> 2 Years, 6 Months</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="trophies/europa.png" alt="Europa League Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Europa League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">English League Cup</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="trophies/supercup-uk.png" alt="Community Shield Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">English Super Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> <strong class="fired-text">FIRED</strong> (2018)</p>
-            <span class="indemnization">COMPENSATION: € 22.0 Million</span>
-        </div>
-
-        <div class="timeline-card fired" data-year="2019-2021">
-            <h3>TOTTENHAM HOTSPUR (England)</h3>
-            <p><strong>Duration:</strong> 1 Year, 5 Months</p>
-            <div class="trophies-container">
-                <p style="padding-left: 0;">No Trophies Won.</p>
-            </div>
-            <p><strong>Status:</strong> <strong class="fired-text">FIRED</strong> (2021)</p>
-            <span class="indemnization">COMPENSATION: € 17.4 Million</span>
-        </div>
-
-        <div class="timeline-card fired" data-year="2021-2024">
-            <h3>AS ROMA (Italy)</h3>
-            <p><strong>Duration:</strong> 2 Years, 6 Months</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="trophies/conference.png" alt="Conference League Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Conference League</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> <strong class="fired-text">FIRED</strong> (2024)</p>
-            <span class="indemnization">COMPENSATION: ~ € 3.5 Million</span>
-        </div>
-
-        <div class="timeline-card fired" data-year="2024-2025">
-            <h3>FENERBAHÇE (Turkey)</h3>
-            <p><strong>Duration:</strong> 1 Year, 2 Months</p>
-            <div class="trophies-container">
-                <p style="padding-left: 0;">No Trophies Won.</p>
-            </div>
-            <p><strong>Status:</strong> <strong class="fired-text">FIRED</strong> (Sept 2025)</p>
-            <span class="indemnization">COMPENSATION: € 15.0 Million</span>
-        </div>
-
-        <div class="timeline-card current" data-year="2025-??">
-            <h3>BENFICA (Portugal) - 2nd Spell</h3>
-            <p><strong>Date Started:</strong> September 18, 2025</p>
-            <div class="trophies-container">
-                 <p style="padding-left: 0;">Trophies: TBD</p>
-            </div>
-            <p><strong>Contract Until:</strong> June 2027</p>
-            <p><strong>Potential Compensation:</strong> The 8th Invoice is Loading...</p>
-            <span class="indemnization" style="color: var(--color-primary); font-size: 1.5em;">WAITING...</span>
-        </div>
-    </section>
-
-    <!-- Google Ad -->
-    <div style="text-align: center; margin: 30px auto; max-width: 900px;">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2177050428602252" 
-             data-ad-slot="5071892769" 
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+      </div>
     </div>
 
-    <section class="individual-awards" aria-label="Individual awards of José Mourinho">
-        <h3>Individual Awards & Honors</h3>
-        <div class="awards-grid">
-            <div class="award-category">
-                <h4>World's Best Awards (FIFA / IFFHS / World Soccer)</h4>
-                <ul>
-                    <li><strong>Coach of the Year (FIFA):</strong> 2010</li>
-                    <li><strong>World's Best Club Coach (IFFHS):</strong> 2004, 2005, 2010, 2012</li>
-                    <li><strong>World Soccer Magazine Manager of the Year:</strong> 2004, 2005, 2010</li>
-                </ul>
-            </div>
-            <div class="award-category">
-                <h4>England</h4>
-                <ul>
-                    <li><strong>Premier League Manager of the Season:</strong> 2004–05, 2005–06, 2014–15</li>
-                    <li><strong>BBC Sports Personality Coach Award:</strong> 2005</li>
-                </ul>
-            </div>
-            <div class="award-category">
-                <h4>Italy</h4>
-                <ul>
-                    <li><strong>Panchina d'Oro (Serie A Coach of the Year):</strong> 2009, 2010</li>
-                </ul>
-            </div>
-            <div class="award-category">
-                <h4>Spain</h4>
-                <ul>
-                    <li><strong>La Liga Best Coach:</strong> 2010–11, 2011–12</li>
-                </ul>
-            </div>
-            <div class="award-category">
-                <h4>Portugal</h4>
-                <ul>
-                    <li><strong>CNID Best Portuguese Coach:</strong> Multiple Years</li>
-                </ul>
-            </div>
-            <div class="award-category">
-                <h4>Special Honors</h4>
-                <ul>
-                    <li><strong>Onze d'Or Coach of the Year:</strong> 2005</li>
-                    <li><strong>Golden Foot Award (as a Coach):</strong> 2012</li>
-                    <li><strong>Globe Soccer Awards Best Coach:</strong> 2010, 2011</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>Website created with ❤️ for football fans worldwide.</p>
-    </footer>
-
-    <!-- PWA Modal -->
-    <div id="pwa-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="pwa-modal-title">
-        <div class="modal-content">
-            <h2 id="pwa-modal-title">Install App</h2>
-            <p>Install this site as a PWA app on your home screen for a faster experience.</p>
-            <ol>
-                <li>Tap <strong>Share</strong> button (<span aria-hidden="true">↑</span> on iOS, <span aria-hidden="true">⋮</span> on Android)</li>
-                <li>Select <strong>Add to Home Screen</strong></li>
-                <li>Confirm installation</li>
-            </ol>
-            <button id="pwa-close-btn" aria-label="Close install instructions">Close and Continue</button>
-        </div>
+    <div class="timeline-card fired" data-year="2015">
+      <h3>Chelsea <strong class="fired-text">FIRED</strong></h3>
+      <span class="indemnization">€12M</span>
     </div>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
+    <div class="timeline-card fired" data-year="2018">
+      <h3>Manchester United <strong class="fired-text">FIRED</strong></h3>
+      <span class="indemnization">€17M</span>
+    </div>
+
+    <div class="timeline-card fired current" data-year="2024">
+      <h3>AS Roma <strong class="fired-text">FIRED</strong></h3>
+      <span class="indemnization">€3M</span>
+    </div>
+  </section>
+
+  <!-- INDIVIDUAL AWARDS -->
+  <section class="individual-awards">
+    <h3>Prémios Individuais</h3>
+    <div class="awards-grid">
+      <div class="award-category">
+        <h4>Treinador do Ano FIFA</h4>
+        <ul>
+          <li>2010</li>
+        </ul>
+      </div>
+      <div class="award-category">
+        <h4>Onze d'Or</h4>
+        <ul>
+          <li>2005</li>
+          <li>2010</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL PWA -->
+  <div id="pwa-modal">
+    <div class="modal-content">
+      <h4>Instala a App</h4>
+      <p>Podes instalar esta página no teu dispositivo como uma app!</p>
+      <button id="install-btn">Instalar</button>
+      <button class="close-btn">Agora não</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Queres apoiar o projeto?</p>
+    <a href="https://www.buymeacoffee.com" target="_blank">Buy me a coffee</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
