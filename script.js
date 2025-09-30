@@ -1,4 +1,4 @@
-// --- 1. BENFICA SURVIVAL COUNTER (CORRIGIDO) ---
+// --- 1. BENFICA SURVIVAL COUNTER ---
 // Start date of Mourinho's tenure at Benfica: September 18, 2025 (10:00:00 AM WEST)
 const benficaStartDate = new Date('September 18, 2025 10:00:00').getTime();
 const counterElement = document.getElementById('benfica-timer');
@@ -18,46 +18,46 @@ function updateCounter() {
         `${days} DAYS, ${hours} HOURS, ${minutes} MINUTES, ${seconds} SECONDS`;
 }
 
-// CHAMA A FUNÇÃO PELA PRIMEIRA VEZ E DEPOIS INICIA O INTERVALO DE 1000ms (1 segundo)
 updateCounter(); 
 setInterval(updateCounter, 1000);
 
-// --- 2. MULTI-LANGUAGE PWA SUGGESTION MODAL (NOVA VERSÃO COM INSTRUÇÕES) ---
+// --- 2. MULTI-LANGUAGE PWA SUGGESTION MODAL (Versão Estável) ---
 
 const translations = {
     'pt': {
         title: "Adicionar ao Ecrã Principal?",
         message: "Obtenha o acesso mais rápido! Esta página pode ser adicionada ao seu ecrã principal para funcionar como uma app.",
-        instructions_ios: "**Se usa Safari/iPhone:** Clique no ícone de partilha ($\uparrow$ ) e escolha \"Adicionar ao Ecrã Principal\".",
-        instructions_android: "**Se usa Chrome/Android:** Clique no menu ($\vdots$ ) e escolha \"Instalar Aplicação\".",
+        // Instruções simplificadas para evitar erros de sintaxe (Unicode)
+        instructions_ios: "**Se usa Safari/iPhone:** Clique no ícone de partilha (Share Icon) e escolha \"Adicionar ao Ecrã Principal\".",
+        instructions_android: "**Se usa Chrome/Android:** Clique no menu (3 Pontos) e escolha \"Instalar Aplicação\".",
         close: "Fechar e continuar",
     },
     'en': {
         title: "Add to Home Screen?",
         message: "Get the fastest access! This page can be added to your home screen to work just like an app.",
-        instructions_ios: "**If you're on Safari/iPhone:** Click the share icon ($\uparrow$ ) and choose \"Add to Home Screen\".",
-        instructions_android: "**If you're on Chrome/Android:** Click the menu ($\vdots$ ) and choose \"Install App\".",
+        instructions_ios: "**If you're on Safari/iPhone:** Click the share icon (Share Icon) and choose \"Add to Home Screen\".",
+        instructions_android: "**If you're on Chrome/Android:** Click the menu (3 Dots) and choose \"Install App\".",
         close: "Close and continue",
     },
     'es': {
         title: "¿Añadir a la Pantalla de Inicio?",
         message: "¡Obtén el acceso más rápido! Esta página puede añadirse a tu pantalla de inicio para funcionar como una aplicación.",
-        instructions_ios: "**Si usas Safari/iPhone:** Haz clic en el icono de compartir ($\uparrow$ ) y elige \"Añadir a la Pantalla de Inicio\".",
-        instructions_android: "**Si usas Chrome/Android:** Haz clic en el menú ($\vdots$ ) y elige \"Instalar Aplicación\".",
+        instructions_ios: "**Si usas Safari/iPhone:** Haz clic en el icono de compartir (Share Icon) y elige \"Añadir a la Pantalla de Inicio\".",
+        instructions_android: "**Si usas Chrome/Android:** Haz clic en el menú (3 Puntos) y elige \"Instalar Aplicación\".",
         close: "Cerrar y continuar",
     },
     'fr': {
         title: "Ajouter à l'écran d'accueil?",
         message: "Obtenez l'accès le plus rapide ! Cette page peut être ajoutée à votre écran d'accueil pour fonctionner comme une application.",
-        instructions_ios: "**Si vous utilisez Safari/iPhone:** Cliquez sur l'icône de partage ($\uparrow$ ) et choisissez \"Ajouter à l'écran d'accueil\".",
-        instructions_android: "**Si vous utilisez Chrome/Android:** Cliquez sur le menu ($\vdots$ ) et choisissez \"Installer l'application\".",
+        instructions_ios: "**Si vous utilisez Safari/iPhone:** Cliquez sur l'icône de partage (Share Icon) et choisissez \"Ajouter à l'écran d'accueil\".",
+        instructions_android: "**Si vous utilisez Chrome/Android:** Cliquez sur le menu (3 Points) et choisissez \"Installer l'application\".",
         close: "Fermer et continuer",
     },
     'it': {
         title: "Aggiungi alla schermata iniziale?",
-        message: "Ottieni l'accesso più rapido! Questa pagina può essere aggiunta alla tua schermata iniziale per funzionare come un'app.",
-        instructions_ios: "**Se usi Safari/iPhone:** Clicca sull'icona di condivisione ($\uparrow$ ) e scegli \"Aggiungi alla schermata iniziale\".",
-        instructions_android: "**Se usi Chrome/Android:** Clicca sul menu ($\vdots$ ) e scegli \"Installa App\".",
+        message: "Ottieni l'accesso più rapido! Questa pagina può ser aggiunta alla tua schermata iniziale per funzionare come un'app.",
+        instructions_ios: "**Se usi Safari/iPhone:** Clicca sull'icona di condivisione (Share Icon) e scegli \"Aggiungi alla schermata iniziale\".",
+        instructions_android: "**Se usi Chrome/Android:** Clicca sul menu (3 Puntos) e scegli \"Installa App\".",
         close: "Chiudi e continua",
     },
 };
@@ -92,6 +92,7 @@ function applyTranslation() {
 }
 
 function showModal() {
+    // Só mostra o modal se o utilizador não o tiver dispensado antes
     if (localStorage.getItem('pwaDismissed') !== 'true') {
         applyTranslation();
         modal.style.display = 'flex';
@@ -106,5 +107,6 @@ function dismissModal() {
 closeButton.addEventListener('click', dismissModal);
 
 window.addEventListener('load', () => {
-    setTimeout(showModal, 3000); // Show 3 seconds after load
+    // Temporizador de 3 segundos para não interromper o carregamento da página
+    setTimeout(showModal, 3000); 
 });
