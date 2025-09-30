@@ -3,108 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>José Mourinho - Timeline</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Mourinho no Benfica</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- HERO SECTION -->
   <section class="hero-section">
     <img id="mourinho-photo" src="mourinho.jpg" alt="José Mourinho">
     <h1>José Mourinho</h1>
-    <h2>The Special One</h2>
-
+    <h2>Treinador do Benfica</h2>
     <div id="money-total">€0</div>
-    <p class="status">Total Indemnizações Recebidas</p>
-
     <div class="benfica-status">
-      <p>Tempo desde que recusou o Benfica:</p>
-      <div id="benfica-timer">00:00:00</div>
+      <p>Tempo no Benfica:</p>
+      <div id="benfica-timer">0 DAYS, 0 HOURS, 0 MINUTES, 0 SECONDS</div>
     </div>
   </section>
 
-  <!-- TIMELINE SECTION -->
-  <section class="timeline-section">
-    <h2>Carreira</h2>
-
-    <div class="timeline-card" data-year="2004">
-      <h3>FC Porto</h3>
-      <div class="trophies-container">
-        <div class="trophy-item">
-          <img src="ucl.png" class="trophy-icon" alt="UCL">
-          <div class="trophy-count">1</div>
-          <div class="trophy-name">Champions League</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-card fired" data-year="2007">
-      <h3>Chelsea <strong class="fired-text">FIRED</strong></h3>
-      <span class="indemnization">€18M</span>
-    </div>
-
-    <div class="timeline-card" data-year="2010">
-      <h3>Inter de Milão</h3>
-      <div class="trophies-container">
-        <div class="trophy-item">
-          <img src="ucl.png" class="trophy-icon" alt="UCL">
-          <div class="trophy-count">1</div>
-          <div class="trophy-name">Champions League</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-card fired" data-year="2015">
-      <h3>Chelsea <strong class="fired-text">FIRED</strong></h3>
-      <span class="indemnization">€12M</span>
-    </div>
-
-    <div class="timeline-card fired" data-year="2018">
-      <h3>Manchester United <strong class="fired-text">FIRED</strong></h3>
-      <span class="indemnization">€17M</span>
-    </div>
-
-    <div class="timeline-card fired current" data-year="2024">
-      <h3>AS Roma <strong class="fired-text">FIRED</strong></h3>
-      <span class="indemnization">€3M</span>
-    </div>
-  </section>
-
-  <!-- INDIVIDUAL AWARDS -->
-  <section class="individual-awards">
-    <h3>Prémios Individuais</h3>
-    <div class="awards-grid">
-      <div class="award-category">
-        <h4>Treinador do Ano FIFA</h4>
-        <ul>
-          <li>2010</li>
-        </ul>
-      </div>
-      <div class="award-category">
-        <h4>Onze d'Or</h4>
-        <ul>
-          <li>2005</li>
-          <li>2010</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- MODAL PWA -->
-  <div id="pwa-modal">
-    <div class="modal-content">
-      <h4>Instala a App</h4>
-      <p>Podes instalar esta página no teu dispositivo como uma app!</p>
-      <button id="install-btn">Instalar</button>
-      <button class="close-btn">Agora não</button>
+  <!-- Modal para PWA -->
+  <div id="pwa-suggestion-modal" class="pwa-modal">
+    <div class="pwa-modal-content">
+      <h4 id="pwa-title"></h4>
+      <p id="pwa-message"></p>
+      <p id="pwa-instructions-ios" style="display:none"></p>
+      <p id="pwa-instructions-android" style="display:none"></p>
+      <button id="pwa-close-button"></button>
     </div>
   </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>Queres apoiar o projeto?</p>
-    <a href="https://www.buymeacoffee.com" target="_blank">Buy me a coffee</a>
-  </footer>
 
   <script src="script.js"></script>
 </body>
