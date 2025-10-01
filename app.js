@@ -1,3 +1,16 @@
+// ===============================================
+// 0. GOOGLE ANALYTICS (Movido para um ficheiro externo)
+// ===============================================
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.googletagmanager.com/gtag/js?id=G-XVTW5TR4M8','gtag');
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XVTW5TR4M8');
+
 // --- 1. BENFICA SURVIVAL COUNTER ---
 // Start date of Mourinho's tenure at Benfica: September 18, 2025 (10:00:00 AM WEST)
 const benficaStartDate = new Date('September 18, 2025 10:00:00').getTime();
@@ -55,7 +68,7 @@ const translations = {
     },
     'fr': {
         title: "Ajouter à l'écran d'accueil?",
-        message: "Bénéficiez de l'expérience complète! Ajoutez cette página à votre écran d'accueil para un accès rápido et en plein écran, como uma application.",
+        message: "Bénéficiez de l'expérience complète! Ajoutez esta página à votre écran d'accueil para un accès rápido et en plein écran, como uma application.",
         install: "Installer l'application",
         close: "Non, merci.",
         fallback: "Veuillez suivre les instructions de votre navigateur pour 'Ajouter à l'écran d'accueil' ou 'Installer l'application'."
@@ -118,11 +131,13 @@ installButton.addEventListener('click', () => {
 
 // Fallback para ecrãs que não disparam 'beforeinstallprompt' imediatamente
 window.addEventListener('load', () => {
+    // Aplicamos a tradução na primeira carga
+    applyTranslation();
+    
     if (!deferredPrompt) {
          setTimeout(function() {
             if (!deferredPrompt && localStorage.getItem('pwaDismissed') !== 'true') {
-                // Mostra o modal, mas o botão de instalar dará a mensagem fallback
-                applyTranslation();
+                // Se o prompt não disparou, mostramos o modal manualmente
                 modal.style.display = 'flex';
              }
          }, 3000); 
