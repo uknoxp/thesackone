@@ -1,815 +1,815 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVTW5TR4M8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-XVTW5TR4M8');
-    </script>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sack One</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        /* ... (O CSS permanece inalterado) ... */
-        :root {
-            --color-primary: #1a1a1a; 
-            --color-secondary: #DAA520; 
-            --color-text: #f0f0f0;
-            --color-background: #ffffff;
-            --timeline-offset: 150px;
-        }
+    <meta charset="UTF-8">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVTW5TR4M8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-XVTW5TR4M8');
+    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sack One</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* ... (O CSS permanece inalterado) ... */
+        :root {
+            --color-primary: #1a1a1a; 
+            --color-secondary: #DAA520; 
+            --color-text: #f0f0f0;
+            --color-background: #ffffff;
+            --timeline-offset: 150px;
+        }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--color-background);
-            color: var(--color-primary);
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-primary);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-        /* HEADER AND MAIN COUNTER */
-        .hero-section {
-            background-color: var(--color-primary);
-            color: var(--color-text);
-            padding: 80px 20px 40px 20px; 
-            position: relative;
-        }
+        /* HEADER AND MAIN COUNTER */
+        .hero-section {
+            background-color: var(--color-primary);
+            color: var(--color-text);
+            padding: 80px 20px 40px 20px; 
+            position: relative;
+        }
 
-        /* Estilo para a imagem de Mourinho */
-        #mourinho-photo {
-            width: 150px; 
-            height: 150px; 
-            border-radius: 50%; 
-            object-fit: cover;
-            border: 5px solid var(--color-secondary); 
-            margin-bottom: 20px;
-        }
-        
-        /* Ajuste para ecrãs maiores */
-        @media (min-width: 768px) {
-            #mourinho-photo {
-                width: 200px;
-                height: 200px;
-            }
-        }
+        /* Estilo para a imagem de Mourinho */
+        #mourinho-photo {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            object-fit: cover;
+            border: 5px solid var(--color-secondary); 
+            margin-bottom: 20px;
+        }
+        
+        /* Ajuste para ecrãs maiores */
+        @media (min-width: 768px) {
+            #mourinho-photo {
+                width: 200px;
+                height: 200px;
+            }
+        }
 
-        .hero-section h1 {
-            font-size: 3.5em;
-            margin: 0 0 10px 0;
-            text-transform: uppercase;
-            font-weight: 900;
-            letter-spacing: 5px;
-        }
+        .hero-section h1 {
+            font-size: 3.5em;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 5px;
+        }
 
-        .hero-section h2 {
-            font-size: 1.8em;
-            color: var(--color-secondary);
-            margin-top: 0;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
+        .hero-section h2 {
+            font-size: 1.8em;
+            color: var(--color-secondary);
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
 
-        /* MONEY TOTAL */
-        #money-total {
-            font-size: 4em;
-            font-weight: 900;
-            color: var(--color-secondary);
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
-        }
+        /* MONEY TOTAL */
+        #money-total {
+            font-size: 4em;
+            font-weight: 900;
+            color: var(--color-secondary);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
 
-        .status {
-            font-size: 1.2em;
-            color: #ccc;
-        }
-        
-        /* NEW COUNTER STYLE */
-        .benfica-status {
-            margin-top: 30px;
-            color: var(--color-secondary);
-            /* Adicionado margem inferior para separar do total de dinheiro */
-            margin-bottom: 40px; 
-        }
+        .status {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+        
+        /* NEW COUNTER STYLE */
+        .benfica-status {
+            margin-top: 30px;
+            color: var(--color-secondary);
+            /* Adicionado margem inferior para separar do total de dinheiro */
+            margin-bottom: 40px; 
+        }
 
-        .benfica-status p {
-            font-size: 1.2em;
-            margin: 5px 0;
-        }
+        .benfica-status p {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
 
-        #benfica-timer {
-            font-size: 2em;
-            font-weight: 900;
-            color: white; 
-        }
-        
-        /* INDIVIDUAL AWARDS SECTION - CSS */
-        .individual-awards {
-            background-color: var(--color-primary);
-            color: var(--color-text);
-            padding: 40px 20px;
-            border-top: 5px solid var(--color-secondary);
-            text-align: left;
-            margin-top: 60px; 
-        }
-        
-        .individual-awards h3 {
-            font-size: 2em;
-            color: var(--color-secondary);
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
+        #benfica-timer {
+            font-size: 2em;
+            font-weight: 900;
+            color: white; 
+        }
+        
+        /* INDIVIDUAL AWARDS SECTION - CSS */
+        .individual-awards {
+            background-color: var(--color-primary);
+            color: var(--color-text);
+            padding: 40px 20px;
+            border-top: 5px solid var(--color-secondary);
+            text-align: left;
+            margin-top: 60px; 
+        }
+        
+        .individual-awards h3 {
+            font-size: 2em;
+            color: var(--color-secondary);
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
 
-        .awards-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+        .awards-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-        .award-category {
-            padding: 20px;
-            background-color: #2a2a2a;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
+        .award-category {
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
 
-        .award-category h4 {
-            color: white;
-            font-size: 1.2em;
-            border-bottom: 2px solid var(--color-secondary);
-            padding-bottom: 5px;
-            margin-top: 0;
-        }
+        .award-category h4 {
+            color: white;
+            font-size: 1.2em;
+            border-bottom: 2px solid var(--color-secondary);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
 
-        .award-category ul {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 0 0;
-        }
+        .award-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
 
-        .award-category li {
-            font-size: 0.9em;
-            line-height: 1.6;
-            padding: 2px 0;
-            border-left: 3px solid var(--color-secondary);
-            padding-left: 10px;
-            margin-bottom: 5px;
-        }
+        .award-category li {
+            font-size: 0.9em;
+            line-height: 1.6;
+            padding: 2px 0;
+            border-left: 3px solid var(--color-secondary);
+            padding-left: 10px;
+            margin-bottom: 5px;
+        }
 
-        /* TIMELINE SECTION */
-        .timeline-section {
-            padding: 60px 20px 0 20px; 
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+        /* TIMELINE SECTION */
+        .timeline-section {
+            padding: 60px 20px 0 20px; 
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-        .timeline-section h2 {
-            color: var(--color-primary);
-            margin-bottom: 50px;
-            font-size: 2em;
-            border-bottom: 3px solid var(--color-secondary);
-            padding-bottom: 10px;
-            display: inline-block;
-        }
+        .timeline-section h2 {
+            color: var(--color-primary);
+            margin-bottom: 50px;
+            font-size: 2em;
+            border-bottom: 3px solid var(--color-secondary);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
 
-        /* TIMELINE CARD STYLE */
-        .timeline-card {
-            background-color: #f9f9f9;
-            border-left: 5px solid var(--color-primary); 
-            padding: 20px 20px 20px 20px; 
-            margin-bottom: 30px;
-            text-align: left;
-            position: relative;
-            margin-left: var(--timeline-offset); 
-        }
+        /* TIMELINE CARD STYLE */
+        .timeline-card {
+            background-color: #f9f9f9;
+            border-left: 5px solid var(--color-primary); 
+            padding: 20px 20px 20px 20px; 
+            margin-bottom: 30px;
+            text-align: left;
+            position: relative;
+            margin-left: var(--timeline-offset); 
+        }
 
-        .timeline-card h3 {
-            margin-top: 0;
-            color: var(--color-primary);
-            font-size: 1.5em;
-            padding-left: 20px; 
-        }
+        .timeline-card h3 {
+            margin-top: 0;
+            color: var(--color-primary);
+            font-size: 1.5em;
+            padding-left: 20px; 
+        }
 
-        .timeline-card.fired {
-            border-left-color: var(--color-secondary); 
-        }
+        .timeline-card.fired {
+            border-left-color: var(--color-secondary); 
+        }
 
-        /* THE YEAR (DATA-YEAR) */
-        .timeline-card::before {
-            content: attr(data-year);
-            position: absolute;
-            top: 20px;
-            left: calc(-1 * var(--timeline-offset)); 
-            background: var(--color-primary);
-            color: white;
-            padding: 5px 10px;
-            font-weight: 700;
-            font-size: 1.1em;
-            width: 80px; 
-            text-align: right; 
-            transform: translateX(35px); 
-            border-radius: 3px;
-        }
-        
-        /* TIMELINE DOT */
-        .timeline-card::after {
-            content: '';
-            position: absolute;
-            top: 28px;
-            left: -5px; 
-            width: 15px;
-            height: 15px;
-            background: var(--color-primary);
-            border: 2px solid white;
-            border-radius: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
+        /* THE YEAR (DATA-YEAR) */
+        .timeline-card::before {
+            content: attr(data-year);
+            position: absolute;
+            top: 20px;
+            left: calc(-1 * var(--timeline-offset)); 
+            background: var(--color-primary);
+            color: white;
+            padding: 5px 10px;
+            font-weight: 700;
+            font-size: 1.1em;
+            width: 80px; 
+            text-align: right; 
+            transform: translateX(35px); 
+            border-radius: 3px;
+        }
+        
+        /* TIMELINE DOT */
+        .timeline-card::after {
+            content: '';
+            position: absolute;
+            top: 28px;
+            left: -5px; 
+            width: 15px;
+            height: 15px;
+            background: var(--color-primary);
+            border: 2px solid white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
 
-        .timeline-card.fired::after {
-            background: var(--color-secondary);
-        }
+        .timeline-card.fired::after {
+            background: var(--color-secondary);
+        }
 
-        /* TROPHIES SECTION */
-        .trophies-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 10px 0 10px 20px; 
-            border-top: 1px solid #eee;
-            margin-top: 10px;
-        }
+        /* TROPHIES SECTION */
+        .trophies-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px 0 10px 20px; 
+            border-top: 1px solid #eee;
+            margin-top: 10px;
+        }
 
-        .trophy-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 80px; 
-        }
+        .trophy-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 80px; 
+        }
 
-        .trophy-icon {
-            width: 40px; 
-            height: 40px;
-            object-fit: contain;
-        }
+        .trophy-icon {
+            **width: 40px;** 
+            **height: 40px;**
+            object-fit: contain;
+        }
 
-        .trophy-count {
-            font-weight: 900;
-            color: var(--color-primary);
-            font-size: 1.5em;
-            line-height: 1;
-            margin-top: 5px;
-        }
+        .trophy-count {
+            font-weight: 900;
+            color: var(--color-primary);
+            font-size: 1.5em;
+            line-height: 1;
+            margin-top: 5px;
+        }
 
-        .trophy-name {
-            font-size: 0.8em;
-            color: #666;
-            line-height: 1.1;
-        }
-        
-        .timeline-card .indemnization {
-            font-weight: 700;
-            color: var(--color-secondary);
-            font-size: 1.3em;
-            margin-top: 10px;
-            display: block;
-            padding-left: 20px;
-        }
+        .trophy-name {
+            font-size: 0.8em;
+            color: #666;
+            line-height: 1.1;
+        }
+        
+        .timeline-card .indemnization {
+            font-weight: 700;
+            color: var(--color-secondary);
+            font-size: 1.3em;
+            margin-top: 10px;
+            display: block;
+            padding-left: 20px;
+        }
 
-        .timeline-card.fired .indemnization {
-            color: var(--color-secondary);
-            font-weight: 900;
-        }
+        .timeline-card.fired .indemnization {
+            color: var(--color-secondary);
+            font-weight: 900;
+        }
 
-        .timeline-card.current {
-            border: 5px dashed var(--color-secondary);
-        }
-        
-        /* PWA SUGGESTION MODAL STYLES */
-        .pwa-modal {
-            display: none; 
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
+        .timeline-card.current {
+            border: 5px dashed var(--color-secondary);
+        }
+        
+        /* PWA SUGGESTION MODAL STYLES */
+        .pwa-modal {
+            display: none; 
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
 
-        .pwa-modal-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 350px;
-            text-align: center;
-            color: var(--color-primary);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
+        .pwa-modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 350px;
+            text-align: center;
+            color: var(--color-primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
 
-        .pwa-modal-content h4 {
-            color: var(--color-secondary);
-            margin-top: 0;
-            font-size: 1.4em;
-        }
+        .pwa-modal-content h4 {
+            color: var(--color-secondary);
+            margin-top: 0;
+            font-size: 1.4em;
+        }
 
-        .pwa-modal-content p {
-            margin-bottom: 20px;
-            font-size: 1em;
-            line-height: 1.4;
-        }
-        
-        .pwa-modal-content button {
-            background-color: var(--color-primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: background-color 0.3s;
-        }
+        .pwa-modal-content p {
+            margin-bottom: 20px;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+        
+        .pwa-modal-content button {
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
 
-        .pwa-modal-content button:hover {
-            background-color: #333;
-        }
-        
-        .pwa-modal-content .close-btn {
-            background-color: transparent;
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 10px;
-            padding: 5px;
-        }
-        
-        .pwa-modal-content .close-btn:hover {
-            color: var(--color-primary);
-            background-color: transparent;
-        }
-        
-        /* FOOTER SUPPORT SECTION */
-        .support-footer {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 30px 20px;
-            border-top: 3px solid var(--color-secondary);
-            text-align: center;
-        }
+        .pwa-modal-content button:hover {
+            background-color: #333;
+        }
+        
+        .pwa-modal-content .close-btn {
+            background-color: transparent;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 10px;
+            padding: 5px;
+        }
+        
+        .pwa-modal-content .close-btn:hover {
+            color: var(--color-primary);
+            background-color: transparent;
+        }
+        
+        /* FOOTER SUPPORT SECTION */
+        .support-footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 30px 20px;
+            border-top: 3px solid var(--color-secondary);
+            text-align: center;
+        }
 
-        .support-footer p {
-            font-size: 1.1em;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #ddd;
-        }
-        
-        .support-footer a {
-            display: inline-block;
-            background-color: var(--color-secondary);
-            color: var(--color-primary);
-            padding: 10px 25px;
-            text-decoration: none;
-            font-weight: 900;
-            border-radius: 5px;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
-        }
+        .support-footer p {
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        
+        .support-footer a {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+            padding: 10px 25px;
+            text-decoration: none;
+            font-weight: 900;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
 
-        .support-footer a:hover {
-            background-color: #ffc107;
-        }
+        .support-footer a:hover {
+            background-color: #ffc107;
+        }
 
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .hero-section h1 { font-size: 2.5em; }
-            #money-total { font-size: 3em; }
-            .timeline-card {
-                margin-left: 20px; 
-            }
-            .timeline-card::before {
-                left: -10px;
-                top: 10px;
-                width: auto;
-                text-align: left;
-                transform: translateX(0); 
-            }
-            .awards-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.5em; }
+            #money-total { font-size: 3em; }
+            .timeline-card {
+                margin-left: 20px; 
+            }
+            .timeline-card::before {
+                left: -10px;
+                top: 10px;
+                width: auto;
+                text-align: left;
+                transform: translateX(0); 
+            }
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="hero-section">
-        <img src="/images/mourinho.jpg" alt="Foto de José Mourinho" id="mourinho-photo">
-        
-        <h1>JOSÉ MOURINHO: THE SACK KING</h1>
-        <h2>A Global Timeline of Success and Compensation</h2>
-        
-        <div class="benfica-status">
-            <p>MOURINHO IS AT BENFICA SINCE SEPTEMBER 18, 2025.</p>
-            <p style="font-size: 1.5em; margin: 10px 0;">HIS SURVIVAL CLOCK SHOWS:</p>
-            <div id="benfica-timer"></div>
-        </div>
+    <div class="hero-section">
+        <img src="/images/mourinho.jpg" alt="Foto de José Mourinho" id="mourinho-photo">
+        
+        <h1>JOSÉ MOURINHO: THE SACK KING</h1>
+        <h2>A Global Timeline of Success and Compensation</h2>
+        
+        <div class="benfica-status">
+            <p>MOURINHO IS AT BENFICA SINCE SEPTEMBER 18, 2025.</p>
+            <p style="font-size: 1.5em; margin: 10px 0;">HIS SURVIVAL CLOCK SHOWS:</p>
+            <div id="benfica-timer"></div>
+        </div>
 
-        <p class="status">TOTAL COMPENSATION FROM SACKINGS (7 Times):</p>
-        <div id="money-total">€ 108,100,000</div>
-    </div>
-    
-    <div class="timeline-section">
-        <h2>Career Timeline (Principal Manager)</h2>
-        
-        <div class="timeline-card" data-year="2000">
-            <h3>BENFICA (Portugal) - 1st Spell</h3>
-            <p><strong>Duration:</strong> 2.5 Months (10 Games)</p>
-            <div class="trophies-container">
-                <p style="padding-left: 0;">No Trophies Won.</p>
-            </div>
-            <p><strong>Status:</strong> Voluntary Resignation</p>
-        </div>
+        <p class="status">TOTAL COMPENSATION FROM SACKINGS (7 Times):</p>
+        <div id="money-total">€ 108,100,000</div>
+    </div>
+    
+    <div class="timeline-section">
+        <h2>Career Timeline (Principal Manager)</h2>
+        
+        <div class="timeline-card" data-year="2000">
+            <h3>BENFICA (Portugal) - 1st Spell</h3>
+            <p><strong>Duration:</strong> 2.5 Months (10 Games)</p>
+            <div class="trophies-container">
+                <p style="padding-left: 0;">No Trophies Won.</p>
+            </div>
+            <p><strong>Status:</strong> Voluntary Resignation</p>
+        </div>
 
-        <div class="timeline-card" data-year="2001-2002">
-            <h3>UNIÃO DE LEIRIA (Portugal)</h3>
-            <p><strong>Duration:</strong> 7 Months</p>
-            <div class="trophies-container">
-                <p style="padding-left: 0;">No Trophies Won.</p>
-            </div>
-            <p><strong>Status:</strong> Mutual Consent (Left for FC Porto)</p>
-        </div>
+        <div class="timeline-card" data-year="2001-2002">
+            <h3>UNIÃO DE LEIRIA (Portugal)</h3>
+            <p><strong>Duration:</strong> 7 Months</p>
+            <div class="trophies-container">
+                <p style="padding-left: 0;">No Trophies Won.</p>
+            </div>
+            <p><strong>Status:</strong> Mutual Consent (Left for FC Porto)</p>
+        </div>
 
-        <div class="timeline-card" data-year="2002-2004">
-            <h3>FC PORTO (Portugal)</h3>
-            <p><strong>Duration:</strong> 2 Years, 5 Months</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="/images/trophies/champions.png" alt="Champions League Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Champions League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/europa.png" alt="UEFA Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">UEFA Cup</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/league-pt.png" alt="Portuguese League Trophy" class="trorophy-icon">
-                    <span class="trophy-count">2</span>
-                    <span class="trophy-name">Portuguese League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/cup-pt.png" alt="Portuguese Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Portuguese Cup</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/supercup-pt.png" alt="Portuguese Super Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Portuguese Super Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> Mutual Consent (Chelsea Paid Clause)</p>
-        </div>
+        <div class="timeline-card" data-year="2002-2004">
+            <h3>FC PORTO (Portugal)</h3>
+            <p><strong>Duration:</strong> 2 Years, 5 Months</p>
+            <div class="trophies-container">
+                <div class="trophy-item">
+                    <img src="/images/trophies/champions.png" alt="Champions League Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Champions League</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/europa.png" alt="UEFA Cup Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">UEFA Cup</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/league-pt.png" alt="Portuguese League Trophy" class="trophy-icon">
+                    <span class="trophy-count">2</span>
+                    <span class="trophy-name">Portuguese League</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/cup-pt.png" alt="Portuguese Cup Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Portuguese Cup</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/supercup-pt.png" alt="Portuguese Super Cup Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Portuguese Super Cup</span>
+                </div>
+            </div>
+            <p><strong>Status:</strong> Mutual Consent (Chelsea Paid Clause)</p>
+        </div>
 
-        <div class="timeline-card fired" data-year="2004-2007">
-            <h3>CHELSEA (England) - 1st Spell</h3>
-            <p><strong>Duration:</strong> 3 Years, 3 Months</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="/images/trophies/league-uk.png" alt="Premier League Trophy" class="trophy-icon">
-                    <span class="trophy-count">2</span>
-                    <span class="trophy-name">Premier League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/cup-uk-national.png" alt="FA Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">FA Cup</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">2</span>
-                    <span class="trophy-name">English League Cup</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/supercup-uk.png" alt="Community Shield Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">English Super Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> **FIRED** (2007)</p>
-            <span class="indemnization">COMPENSATION: € 20.9 Million</span>
-        </div>
+        <div class="timeline-card fired" data-year="2004-2007">
+            <h3>CHELSEA (England) - 1st Spell</h3>
+            <p><strong>Duration:</strong> 3 Years, 3 Months</p>
+            <div class="trophies-container">
+                <div class="trophy-item">
+                    <img src="/images/trophies/league-uk.png" alt="Premier League Trophy" class="trophy-icon">
+                    <span class="trophy-count">2</span>
+                    <span class="trophy-name">Premier League</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/cup-uk-national.png" alt="FA Cup Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">FA Cup</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
+                    <span class="trophy-count">2</span>
+                    <span class="trophy-name">English League Cup</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/supercup-uk.png" alt="Community Shield Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">English Super Cup</span>
+                </div>
+            </div>
+            <p><strong>Status:</strong> **FIRED** (2007)</p>
+            <span class="indemnization">COMPENSATION: € 20.9 Million</span>
+        </div>
 
-        <div class="timeline-card" data-year="2008-2010">
-            <h3>INTER MILAN (Italy)</h3>
-            <p><strong>Duration:</strong> 2 Years</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="/images/trophies/champions.png" alt="Champions League Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Champions League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/league-it.png" alt="Serie A Trophy" class="trophy-icon">
-                    <span class="trophy-count">2</span>
-                    <span class="trophy-name">Italian League (Serie A)</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/cup-it-national.png" alt="Coppa Italia Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Italian Cup (Coppa Italia)</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/supercup-it.png" alt="Italian Super Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Italian Super Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> Mutual Consent (Left for Real Madrid)</p>
-        </div>
+        <div class="timeline-card" data-year="2008-2010">
+            <h3>INTER MILAN (Italy)</h3>
+            <p><strong>Duration:</strong> 2 Years</p>
+            <div class="trophies-container">
+                <div class="trophy-item">
+                    <img src="/images/trophies/champions.png" alt="Champions League Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Champions League</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/league-it.png" alt="Serie A Trophy" class="trophy-icon">
+                    <span class="trophy-count">2</span>
+                    <span class="trophy-name">Italian League (Serie A)</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/cup-it-national.png" alt="Coppa Italia Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Italian Cup (Coppa Italia)</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/supercup-it.png" alt="Italian Super Cup Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Italian Super Cup</span>
+                </div>
+            </div>
+            <p><strong>Status:</strong> Mutual Consent (Left for Real Madrid)</p>
+        </div>
 
-        <div class="timeline-card fired" data-year="2010-2013">
-            <h3>REAL MADRID (Spain)</h3>
-            <p><strong>Duration:</strong> 3 Years</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="/images/trophies/league-es.png" alt="La Liga Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Spanish League (La Liga)</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/cup-es-national.png" alt="Copa del Rey Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Copa del Rey</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/supercup-es.png" alt="Spanish Super Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Spanish Super Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> **FIRED** (2013)</p>
-            <span class="indemnization">COMPENSATION: € 19.7 Million</span>
-        </div>
+        <div class="timeline-card fired" data-year="2010-2013">
+            <h3>REAL MADRID (Spain)</h3>
+            <p><strong>Duration:</strong> 3 Years</p>
+            <div class="trophies-container">
+                <div class="trophy-item">
+                    <img src="/images/trophies/league-es.png" alt="La Liga Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Spanish League (La Liga)</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/cup-es-national.png" alt="Copa del Rey Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Copa del Rey</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/supercup-es.png" alt="Spanish Super Cup Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Spanish Super Cup</span>
+                </div>
+            </div>
+            <p><strong>Status:</strong> **FIRED** (2013)</p>
+            <span class="indemnization">COMPENSATION: € 19.7 Million</span>
+        </div>
 
-        <div class="timeline-card fired" data-year="2013-2015">
-            <h3>CHELSEA (England) - 2nd Spell</h3>
-            <p><strong>Duration:</strong> 2 Years, 5 Months</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="/images/trophies/league-uk.png" alt="Premier League Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Premier League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">English League Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> **FIRED** (2015)</p>
-            <span class="indemnization">COMPENSATION: € 9.6 Million</span>
-        </div>
+        <div class="timeline-card fired" data-year="2013-2015">
+            <h3>CHELSEA (England) - 2nd Spell</h3>
+            <p><strong>Duration:</strong> 2 Years, 5 Months</p>
+            <div class="trophies-container">
+                <div class="trophy-item">
+                    <img src="/images/trophies/league-uk.png" alt="Premier League Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Premier League</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">English League Cup</span>
+                </div>
+            </div>
+            <p><strong>Status:</strong> **FIRED** (2015)</p>
+            <span class="indemnization">COMPENSATION: € 9.6 Million</span>
+        </div>
 
-        <div class="timeline-card fired" data-year="2016-2018">
-            <h3>MANCHESTER UNITED (England)</h3>
-            <p><strong>Duration:</strong> 2 Years, 6 Months</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="/images/trophies/europa.png" alt="Europa League Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Europa League</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">English League Cup</span>
-                </div>
-                <div class="trophy-item">
-                    <img src="/images/trophies/supercup-uk.png" alt="Community Shield Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">English Super Cup</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> **FIRED** (2018)</p>
-            <span class="indemnization">COMPENSATION: € 22.0 Million</span>
-        </div>
+        <div class="timeline-card fired" data-year="2016-2018">
+            <h3>MANCHESTER UNITED (England)</h3>
+            <p><strong>Duration:</strong> 2 Years, 6 Months</p>
+            <div class="trophies-container">
+                <div class="trophy-item">
+                    <img src="/images/trophies/europa.png" alt="Europa League Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Europa League</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">English League Cup</span>
+                </div>
+                <div class="trophy-item">
+                    <img src="/images/trophies/supercup-uk.png" alt="Community Shield Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">English Super Cup</span>
+                </div>
+            </div>
+            <p><strong>Status:</strong> **FIRED** (2018)</p>
+            <span class="indemnization">COMPENSATION: € 22.0 Million</span>
+        </div>
 
-        <div class="timeline-card fired" data-year="2019-2021">
-            <h3>TOTTENHAM HOTSPUR (England)</h3>
-            <p><strong>Duration:</strong> 1 Year, 5 Months</p>
-            <div class="trophies-container">
-                <p style="padding-left: 0;">No Trophies Won.</p>
-            </div>
-            <p><strong>Status:</strong> **FIRED** (2021)</p>
-            <span class="indemnization">COMPENSATION: € 17.4 Million</span>
-        </div>
+        <div class="timeline-card fired" data-year="2019-2021">
+            <h3>TOTTENHAM HOTSPUR (England)</h3>
+            <p><strong>Duration:</strong> 1 Year, 5 Months</p>
+            <div class="trophies-container">
+                <p style="padding-left: 0;">No Trophies Won.</p>
+            </div>
+            <p><strong>Status:</strong> **FIRED** (2021)</p>
+            <span class="indemnization">COMPENSATION: € 17.4 Million</span>
+        </div>
 
-        <div class="timeline-card fired" data-year="2021-2024">
-            <h3>AS ROMA (Italy)</h3>
-            <p><strong>Duration:</strong> 2 Years, 6 Months</p>
-            <div class="trophies-container">
-                <div class="trophy-item">
-                    <img src="/images/trophies/conference.png" alt="Conference League Trophy" class="trophy-icon">
-                    <span class="trophy-count">1</span>
-                    <span class="trophy-name">Conference League</span>
-                </div>
-            </div>
-            <p><strong>Status:</strong> **FIRED** (2024)</p>
-            <span class="indemnization">COMPENSATION: ~ € 3.5 Million</span>
-        </div>
+        <div class="timeline-card fired" data-year="2021-2024">
+            <h3>AS ROMA (Italy)</h3>
+            <p><strong>Duration:</strong> 2 Years, 6 Months</p>
+            <div class="trophies-container">
+                <div class="trophy-item">
+                    <img src="/images/trophies/conference.png" alt="Conference League Trophy" class="trophy-icon">
+                    <span class="trophy-count">1</span>
+                    <span class="trophy-name">Conference League</span>
+                </div>
+            </div>
+            <p><strong>Status:</strong> **FIRED** (2024)</p>
+            <span class="indemnization">COMPENSATION: ~ € 3.5 Million</span>
+        </div>
 
-        <div class="timeline-card fired" data-year="2024-2025">
-            <h3>FENERBAHÇE (Turkey)</h3>
-            <p><strong>Duration:</strong> 1 Year, 2 Months</p>
-            <div class="trophies-container">
-                <p style="padding-left: 0;">No Trophies Won.</p>
-            </div>
-            <p><strong>Status:</strong> **FIRED** (Sept 2025)</p>
-            <span class="indemnization">COMPENSATION: € 15.0 Million</span>
-        </div>
-        
-        <div class="timeline-card current" data-year="2025-??">
-            <h3>BENFICA (Portugal) - 2nd Spell</h3>
-            <p><strong>Date Started:</strong> September 18, 2025</p>
-            <div class="trophies-container">
-                   <p style="padding-left: 0;">Trophies: TBD</p>
-            </div>
-            <p><strong>Contract Until:</strong> June 2027</p>
-            <p><strong>Potential Compensation:</strong> The 8th Invoice is Loading...</p>
-            <span class="indemnization" style="color: var(--color-primary); font-size: 1.5em;">WAITING...</span>
-        </div>
-    </div>
-    
-    <div class="individual-awards">
-        <h3>Individual Awards & Honors</h3>
-        <div class="awards-grid">
-            
-            <div class="award-category">
-                <h4>World's Best Awards (FIFA / IFFHS / World Soccer)</h4>
-                <ul>
-                    <li>**Coach of the Year (FIFA):** 2010</li>
-                    <li>**World's Best Club Coach (IFFHS):** 2004, 2005, 2010, 2012</li>
-                    <li>**World Soccer Magazine Manager of the Year:** 2004, 2005, 2010</li>
-                    <li>**Onze d'Or Coach of the Year:** 2005</li>
-                    <li>**IFFHS World's Best Coach of the 21st Century:** 2021</li>
-                </ul>
-            </div>
+        <div class="timeline-card fired" data-year="2024-2025">
+            <h3>FENERBAHÇE (Turkey)</h3>
+            <p><strong>Duration:</strong> 1 Year, 2 Months</p>
+            <div class="trophies-container">
+                <p style="padding-left: 0;">No Trophies Won.</p>
+            </div>
+            <p><strong>Status:</strong> **FIRED** (Sept 2025)</p>
+            <span class="indemnization">COMPENSATION: € 15.0 Million</span>
+        </div>
+        
+        <div class="timeline-card current" data-year="2025-??">
+            <h3>BENFICA (Portugal) - 2nd Spell</h3>
+            <p><strong>Date Started:</strong> September 18, 2025</p>
+            <div class="trophies-container">
+                   <p style="padding-left: 0;">Trophies: TBD</p>
+            </div>
+            <p><strong>Contract Until:</strong> June 2027</p>
+            <p><strong>Potential Compensation:</strong> The 8th Invoice is Loading...</p>
+            <span class="indemnization" style="color: var(--color-primary); font-size: 1.5em;">WAITING...</span>
+        </div>
+    </div>
+    
+    <div class="individual-awards">
+        <h3>Individual Awards & Honors</h3>
+        <div class="awards-grid">
+            
+            <div class="award-category">
+                <h4>World's Best Awards (FIFA / IFFHS / World Soccer)</h4>
+                <ul>
+                    <li>**Coach of the Year (FIFA):** 2010</li>
+                    <li>**World's Best Club Coach (IFFHS):** 2004, 2005, 2010, 2012</li>
+                    <li>**World Soccer Magazine Manager of the Year:** 2004, 2005, 2010</li>
+                    <li>**Onze d'Or Coach of the Year:** 2005</li>
+                    <li>**IFFHS World's Best Coach of the 21st Century:** 2021</li>
+                </ul>
+            </div>
 
-            <div class="award-category">
-                <h4>European and National Awards</h4>
-                <ul>
-                    <li>**UEFA Coach of the Year:** 2003, 2004</li>
-                    <li>**UEFA Team of the Year:** 2003, 2004, 2005, 2010</li>
-                    <li>**Premier League Manager of the Season:** 2005, 2006, 2015</li>
-                    <li>**Oscar del Calcio Coach of the Year:** 2009, 2010</li>
-                    <li>**Panchina d'Oro (Italian Coach of the Year):** 2010</li>
-                    <li>**Miguel Muñoz Trophy (Spanish Coach of the Year):** 2011, 2012</li>
-                    <li>**Conference League (The Special One Cup):** 2022</li>
-                </ul>
-            </div>
+            <div class="award-category">
+                <h4>European and National Awards</h4>
+                <ul>
+                    <li>**UEFA Coach of the Year:** 2003, 2004</li>
+                    <li>**UEFA Team of the Year:** 2003, 2004, 2005, 2010</li>
+                    <li>**Premier League Manager of the Season:** 2005, 2006, 2015</li>
+                    <li>**Oscar del Calcio Coach of the Year:** 2009, 2010</li>
+                    <li>**Panchina d'Oro (Italian Coach of the Year):** 2010</li>
+                    <li>**Miguel Muñoz Trophy (Spanish Coach of the Year):** 2011, 2012</li>
+                    <li>**Conference League (The Special One Cup):** 2022</li>
+                </ul>
+            </div>
 
-            <div class="award-category">
-                <h4>Recognition and Historical Rankings</h4>
-                <ul>
-                    <li>**Portuguese Coach of the 21st Century (FPF):** 2015</li>
-                    <li>**Order of Prince Henry (Portugal):** 2005</li>
-                    <li>**BBC Sports Personality of the Year Coach Award:** 2005</li>
-                    <li>**La Gazzetta dello Sport Coach of the Year:** 2010</li>
-                    <li>**3rd Greatest Manager of All Time (World Soccer):** 2013</li>
-                    <li>**9th Greatest Manager of All Time (ESPN):** 2013</li>
-                    <li>**13th Greatest Manager of All Time (France Football):** 2019</li>
-                </ul>
-            </div>
+            <div class="award-category">
+                <h4>Recognition and Historical Rankings</h4>
+                <ul>
+                    <li>**Portuguese Coach of the 21st Century (FPF):** 2015</li>
+                    <li>**Order of Prince Henry (Portugal):** 2005</li>
+                    <li>**BBC Sports Personality of the Year Coach Award:** 2005</li>
+                    <li>**La Gazzetta dello Sport Coach of the Year:** 2010</li>
+                    <li>**3rd Greatest Manager of All Time (World Soccer):** 2013</li>
+                    <li>**9th Greatest Manager of All Time (ESPN):** 2013</li>
+                    <li>**13th Greatest Manager of All Time (France Football):** 2019</li>
+                </ul>
+            </div>
 
-        </div>
-    </div>
-    <div class="support-footer">
-        <p>Buy the stupid guy who made this website a coffee.</p>
-        <a href="https://paypal.me/realcoffeeaddict" target="_blank">
-            Donate via PayPal
-        </a>
-    </div>
+        </div>
+    </div>
+    <div class="support-footer">
+        <p>Buy the stupid guy who made this website a coffee.</p>
+        <a href="https://paypal.me/realcoffeeaddict" target="_blank">
+            Donate via PayPal
+        </a>
+    </div>
 
-    <div id="pwa-suggestion-modal" class="pwa-modal">
-        <div class="pwa-modal-content">
-            <h4 id="pwa-title">Add to Home Screen?</h4>
-            <p id="pwa-message">Get the full experience! Add this page to your home screen for quick, fullscreen access, just like an app.</p>
-            <button id="pwa-install-button">Install App</button>
-            <button id="pwa-close-button" class="close-btn">No, thanks.</button>
-        </div>
-    </div>
-    
-    <script>
-        // --- 1. BENFICA SURVIVAL COUNTER ---
-        // Start date of Mourinho's tenure at Benfica: September 18, 2025 (10:00:00 AM WEST)
-        const benficaStartDate = new Date('September 18, 2025 10:00:00').getTime();
-        const counterElement = document.getElementById('benfica-timer');
+    <div id="pwa-suggestion-modal" class="pwa-modal">
+        <div class="pwa-modal-content">
+            <h4 id="pwa-title">Add to Home Screen?</h4>
+            <p id="pwa-message">Get the full experience! Add this page to your home screen for quick, fullscreen access, just like an app.</p>
+            <button id="pwa-install-button">Install App</button>
+            <button id="pwa-close-button" class="close-btn">No, thanks.</button>
+        </div>
+    </div>
+    
+    <script>
+        // --- 1. BENFICA SURVIVAL COUNTER ---
+        // Start date of Mourinho's tenure at Benfica: September 18, 2025 (10:00:00 AM WEST)
+        const benficaStartDate = new Date('September 18, 2025 10:00:00').getTime();
+        const counterElement = document.getElementById('benfica-timer');
 
-        function updateCounter() {
-            // Utiliza a hora atual do PC do utilizador
-            const now = new Date().getTime();
-            const difference = now - benficaStartDate;
+        function updateCounter() {
+            // Utiliza a hora atual do PC do utilizador
+            const now = new Date().getTime();
+            const difference = now - benficaStartDate;
 
-            // Calculations
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            // Calculations
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            // Output in Days, Hours, Minutes, Seconds format
-            counterElement.innerHTML = 
-                `${days} DAYS, ${hours} HOURS, ${minutes} MINUTES, ${seconds} SECONDS`;
-        }
+            // Output in Days, Hours, Minutes, Seconds format
+            counterElement.innerHTML = 
+                `${days} DAYS, ${hours} HOURS, ${minutes} MINUTES, ${seconds} SECONDS`;
+        }
 
-        // CHAMA A FUNÇÃO PELA PRIMEIRA VEZ E DEPOIS INICIA O INTERVALO DE 1000ms (1 segundo)
-        updateCounter(); 
-        setInterval(updateCounter, 1000);
+        // CHAMA A FUNÇÃO PELA PRIMEIRA VEZ E DEPOIS INICIA O INTERVALO DE 1000ms (1 segundo)
+        updateCounter(); 
+        setInterval(updateCounter, 1000);
 
-        // --- 2. MULTI-LANGUAGE PWA SUGGESTION MODAL ---
-        
-        const translations = {
-            'pt': {
-                title: "Adicionar ao Ecrã Principal?",
-                message: "Obtenha a experiência completa! Adicione esta página ao seu ecrã principal para acesso rápido, como uma aplicação.",
-                install: "Instalar Aplicação",
-                close: "Não, obrigado.",
-            },
-            'en': {
-                title: "Add to Home Screen?",
-                message: "Get the full experience! Add this page to your home screen for quick, fullscreen access, just like an app.",
-                install: "Install App",
-                close: "No, thanks.",
-            },
-            'es': {
-                title: "¿Añadir a la Pantalla de Inicio?",
-                message: "¡Obtén la experiencia completa! Añade esta página a tu pantalla de inicio para un acceso rápido y a pantalla completa, como una aplicación.",
-                install: "Instalar Aplicación",
-                close: "No, gracias.",
-            },
-            'fr': {
-                title: "Ajouter à l'écran d'accueil?",
-                message: "Bénéficiez de l'expérience complète! Ajoutez cette página à votre écran d'accueil para un accès rápido et en plein écran, como uma application.",
-                install: "Installer l'application",
-                close: "Non, merci.",
-            },
-            'it': {
-                title: "Aggiungi alla schermata iniziale?",
-                message: "Ottieni l'esperienza completa! Aggiungi questa pagina alla tua schermata iniziale per un accesso rapido e a schermo intero, proprio come un'app.",
-                install: "Installa App",
-                close: "No, grazie.",
-            },
-        };
+        // --- 2. MULTI-LANGUAGE PWA SUGGESTION MODAL ---
+        
+        const translations = {
+            'pt': {
+                title: "Adicionar ao Ecrã Principal?",
+                message: "Obtenha a experiência completa! Adicione esta página ao seu ecrã principal para acesso rápido, como uma aplicação.",
+                install: "Instalar Aplicação",
+                close: "Não, obrigado.",
+            },
+            'en': {
+                title: "Add to Home Screen?",
+                message: "Get the full experience! Add this page to your home screen for quick, fullscreen access, just like an app.",
+                install: "Install App",
+                close: "No, thanks.",
+            },
+            'es': {
+                title: "¿Añadir a la Pantalla de Inicio?",
+                message: "¡Obtén la experiencia completa! Añade esta página a tu pantalla de inicio para un acceso rápido y a pantalla completa, como una aplicación.",
+                install: "Instalar Aplicación",
+                close: "No, gracias.",
+            },
+            'fr': {
+                title: "Ajouter à l'écran d'accueil?",
+                message: "Bénéficiez de l'expérience complète! Ajoutez cette página à votre écran d'accueil para un accès rápido et en plein écran, como uma application.",
+                install: "Installer l'application",
+                close: "Non, merci.",
+            },
+            'it': {
+                title: "Aggiungi alla schermata iniziale?",
+                message: "Ottieni l'esperienza completa! Aggiungi questa pagina alla tua schermata iniziale per un accesso rapido e a schermo intero, proprio come un'app.",
+                install: "Installa App",
+                close: "No, grazie.",
+            },
+        };
 
-        const modal = document.getElementById('pwa-suggestion-modal');
-        const installButton = document.getElementById('pwa-install-button');
-        const closeButton = document.getElementById('pwa-close-button');
+        const modal = document.getElementById('pwa-suggestion-modal');
+        const installButton = document.getElementById('pwa-install-button');
+        const closeButton = document.getElementById('pwa-close-button');
 
-        let userLang = (navigator.language || navigator.userLanguage).slice(0, 2).toLowerCase();
-        const langData = translations[userLang] || translations['en'];
+        let userLang = (navigator.language || navigator.userLanguage).slice(0, 2).toLowerCase();
+        const langData = translations[userLang] || translations['en'];
 
-        function applyTranslation() {
-            document.getElementById('pwa-title').textContent = langData.title;
-            document.getElementById('pwa-message').textContent = langData.message;
-            installButton.textContent = langData.install;
-            closeButton.textContent = langData.close;
-        }
+        function applyTranslation() {
+            document.getElementById('pwa-title').textContent = langData.title;
+            document.getElementById('pwa-message').textContent = langData.message;
+            installButton.textContent = langData.install;
+            closeButton.textContent = langData.close;
+        }
 
-        function showModal() {
-            if (localStorage.getItem('pwaDismissed') !== 'true') {
-                applyTranslation();
-                modal.style.display = 'flex';
-            }
-        }
+        function showModal() {
+            if (localStorage.getItem('pwaDismissed') !== 'true') {
+                applyTranslation();
+                modal.style.display = 'flex';
+            }
+        }
 
-        function dismissModal() {
-            modal.style.display = 'none';
-            localStorage.setItem('pwaDismissed', 'true');
-        }
+        function dismissModal() {
+            modal.style.display = 'none';
+            localStorage.setItem('pwaDismissed', 'true');
+        }
 
-        closeButton.addEventListener('click', dismissModal);
-        
-        installButton.addEventListener('click', () => {
-             dismissModal();
-             alert("Follow your browser's instructions to 'Add to Home Screen' or 'Install App'.");
-        });
+        closeButton.addEventListener('click', dismissModal);
+        
+        installButton.addEventListener('click', () => {
+             dismissModal();
+             alert("Follow your browser's instructions to 'Add to Home Screen' or 'Install App'.");
+        });
 
-        window.addEventListener('load', () => {
-            setTimeout(showModal, 3000); // Show 3 seconds after load
-        });
-        
-    </script>
+        window.addEventListener('load', () => {
+            setTimeout(showModal, 3000); // Show 3 seconds after load
+        });
+        
+    </script>
 </body>
 </html>
