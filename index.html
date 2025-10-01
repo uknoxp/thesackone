@@ -917,19 +917,22 @@
         });
         
         // ====================================================================
-        // 3. REGISTO DO SERVICE WORKER (Movido do bloco duplicado e integrado)
-        // ====================================================================
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => {
-                        console.log('Service Worker Registado com sucesso! Scope:', registration.scope);
-                    })
-                    .catch(error => {
-                        console.log('Falha no registo do Service Worker:', error);
-                    });
+// 3. REGISTO DO SERVICE WORKER (CORRIGIDO O NOME DO FICHEIRO)
+// ====================================================================
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // CORRIGIDO: O nome do ficheiro deve ser 'service-worker.js'
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('Service Worker Registado com sucesso! Scope:', registration.scope);
+            })
+            .catch(error => {
+                // Este erro será útil se o ficheiro service-worker.js tiver erros de sintaxe
+                console.log('Falha no registo do Service Worker:', error);
             });
-        }
+    });
+}
     </script>
 </body>
 </html>
+
