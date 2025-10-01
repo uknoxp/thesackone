@@ -3,72 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mourinho no Benfica</title>
+  <title>Cristiano Ronaldo Goal Counter</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="hero-section">
-    <img id="mourinho-photo" src="mourinho.jpg" alt="José Mourinho">
-    <h1>José Mourinho</h1>
-    <h2>Treinador do Benfica</h2>
-    <div id="money-total">€0</div>
-    <div class="benfica-status">
-      <p>Tempo no Benfica:</p>
-      <div id="benfica-timer">0 DAYS, 0 HOURS, 0 MINUTES, 0 SECONDS</div>
-    </div>
-  </section>
 
-  <!-- Secção de prémios individuais -->
-  <section class="individual-awards">
-    <h3>Prémios Individuais</h3>
-    <div class="awards-grid">
-      <div class="award-category">
-        <h4>Treinador do Ano</h4>
-        <ul>
-          <li>2004</li>
-          <li>2005</li>
-          <li>2010</li>
-        </ul>
-      </div>
-      <div class="award-category">
-        <h4>Outros Prémios</h4>
-        <ul>
-          <li>Vários reconhecimentos UEFA</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <div class="container">
+    <h1>Cristiano Ronaldo Goal Counter</h1>
+    <div id="goal-counter">0</div>
 
-  <!-- Exemplo de Timeline -->
-  <section class="timeline-section">
-    <h2>Carreira</h2>
-    <div class="timeline-card" data-year="2000">
-      <h3>Benfica</h3>
-      <span class="indemnization">Indemnização: €0</span>
-    </div>
-    <div class="timeline-card fired" data-year="2002">
-      <h3>União de Leiria</h3>
-      <span class="indemnization">Saiu para o Porto</span>
-    </div>
-  </section>
+    <h2>Benfica Survival Counter</h2>
+    <div id="benfica-timer">Loading...</div>
+  </div>
 
-  <!-- Modal para PWA -->
+  <!-- Modal PWA -->
   <div id="pwa-suggestion-modal" class="pwa-modal">
-    <div class="pwa-modal-content">
-      <h4 id="pwa-title"></h4>
+    <div class="pwa-content">
+      <h2 id="pwa-title"></h2>
       <p id="pwa-message"></p>
-      <p id="pwa-instructions-ios" style="display:none"></p>
-      <p id="pwa-instructions-android" style="display:none"></p>
+      <p id="pwa-instructions-ios" style="display:none;"></p>
+      <p id="pwa-instructions-android" style="display:none;"></p>
       <button id="pwa-close-button"></button>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="support-footer">
-    <p>Apoia o projeto</p>
-    <a href="#">Doar</a>
-  </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
+
+</html>
+
