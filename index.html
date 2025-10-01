@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     
+    <link rel="icon" type="image/png" href="favicon.png"> 
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVTW5TR4M8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -392,19 +394,38 @@
             background-color: #ffc107;
         }
 
-        /* Mobile Adjustments */
+        /* CORREÇÃO 3: Mobile Adjustments para a Timeline */
         @media (max-width: 768px) {
             .hero-section h1 { font-size: 2.5em; }
             #money-total { font-size: 3em; }
             .timeline-card {
+                /* Reduz a margem para caber a data */
                 margin-left: 20px; 
+                /* Mais padding à esquerda para dar espaço ao ponto da timeline */
+                padding: 20px 15px 20px 30px; 
             }
             .timeline-card::before {
-                left: -10px;
-                top: 10px;
+                /* Remove o fundo e move a data para a esquerda da linha */
+                left: -5px;
+                top: 20px;
                 width: auto;
+                font-size: 0.9em;
                 text-align: left;
-                transform: translateX(0); 
+                transform: translateX(-100%); 
+                background: none; 
+                color: var(--color-primary); 
+                padding: 0;
+                white-space: nowrap; 
+            }
+            .timeline-card::after {
+                /* Ajusta o ponto para a nova margem */
+                left: 0px; 
+                top: 25px;
+                width: 12px;
+                height: 12px;
+            }
+            .timeline-card h3 {
+                padding-left: 5px; 
             }
             .awards-grid {
                 grid-template-columns: 1fr;
@@ -739,38 +760,56 @@
         updateCounter(); 
         setInterval(updateCounter, 1000);
 
-        // --- 2. MULTI-LANGUAGE PWA SUGGESTION MODAL ---
+        // --- 2. MULTI-LANGUAGE PWA SUGGESTION MODAL (CORRIGIDO) ---
         
+        let deferredPrompt; // Variável para armazenar o evento de instalação
+        
+        // O NAVEGADOR DISPARA ESTE EVENTO QUANDO PODE INSTALAR O PWA
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e; 
+            // Mostra o modal se não foi dispensado e o PWA está pronto para ser instalado
+            if (localStorage.getItem('pwaDismissed') !== 'true') {
+                 applyTranslation();
+                 modal.style.display = 'flex';
+            }
+        });
+
         const translations = {
             'pt': {
                 title: "Adicionar ao Ecrã Principal?",
                 message: "Obtenha a experiência completa! Adicione esta página ao seu ecrã principal para acesso rápido, como uma aplicação.",
                 install: "Instalar Aplicação",
                 close: "Não, obrigado.",
+                fallback: "Por favor, siga as instruções do seu navegador para 'Adicionar ao Ecrã Principal' (ou 'Instalar App')."
             },
             'en': {
                 title: "Add to Home Screen?",
                 message: "Get the full experience! Add this page to your home screen for quick, fullscreen access, just like an app.",
                 install: "Install App",
                 close: "No, thanks.",
+                fallback: "Please follow your browser's instructions to 'Add to Home Screen' or 'Install App'."
             },
-            'es': {
+             'es': {
                 title: "¿Añadir a la Pantalla de Inicio?",
                 message: "¡Obtén la experiencia completa! Añade esta página a tu pantalla de inicio para un acceso rápido y a pantalla completa, como una aplicación.",
                 install: "Instalar Aplicación",
                 close: "No, gracias.",
+                fallback: "Por favor, siga las instrucciones de su navegador para 'Añadir a la Pantalla de Inicio' o 'Instalar App'."
             },
             'fr': {
                 title: "Ajouter à l'écran d'accueil?",
                 message: "Bénéficiez de l'expérience complète! Ajoutez cette página à votre écran d'accueil para un accès rápido et en plein écran, como uma application.",
                 install: "Installer l'application",
                 close: "Non, merci.",
+                fallback: "Veuillez suivre les instructions de votre navigateur pour 'Ajouter à l'écran d'accueil' ou 'Installer l'application'."
             },
             'it': {
                 title: "Aggiungi alla schermata iniziale?",
                 message: "Ottieni l'esperienza completa! Aggiungi questa pagina alla tua schermata iniziale per un accesso rapido e a schermo intero, proprio come un'app.",
                 install: "Installa App",
                 close: "No, grazie.",
+                fallback: "Si prega di seguire le istruzioni del browser per 'Aggiungi a schermata iniziale' o 'Installa App'."
             },
         };
 
@@ -788,13 +827,6 @@
             closeButton.textContent = langData.close;
         }
 
-        function showModal() {
-            if (localStorage.getItem('pwaDismissed') !== 'true') {
-                applyTranslation();
-                modal.style.display = 'flex';
-            }
-        }
-
         function dismissModal() {
             modal.style.display = 'none';
             localStorage.setItem('pwaDismissed', 'true');
@@ -803,12 +835,37 @@
         closeButton.addEventListener('click', dismissModal);
         
         installButton.addEventListener('click', () => {
-             dismissModal();
-             alert("Follow your browser's instructions to 'Add to Home Screen' or 'Install App'.");
+            dismissModal();
+            
+            if (deferredPrompt) {
+                // Tenta invocar a interface de instalação nativa
+                deferredPrompt.prompt(); 
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                    deferredPrompt = null; 
+                });
+            } else {
+                // Mensagem fallback (se o PWA não estiver pronto ou não for suportado)
+                alert(langData.fallback); 
+            }
         });
 
         window.addEventListener('load', () => {
-            setTimeout(showModal, 3000); // Show 3 seconds after load
+            // Se o deferredPrompt já tiver sido definido (PWA pronto), o modal já estará visível
+            // Se não, vamos esperar 3 segundos e verificar novamente, caso o evento 'beforeinstallprompt' demore a disparar
+            if (!deferredPrompt) {
+                 setTimeout(function() {
+                     if (!deferredPrompt && localStorage.getItem('pwaDismissed') !== 'true') {
+                        // Mostra o modal, mas o botão de instalar dará a mensagem fallback
+                        applyTranslation();
+                        modal.style.display = 'flex';
+                     }
+                 }, 3000); 
+            }
         });
         
     </script>
