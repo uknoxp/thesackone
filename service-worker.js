@@ -1,29 +1,29 @@
-// O nome do Cache. MUDE O NÚMERO (v1, v2, v3...) sempre que atualizar a lista de ficheiros abaixo.
-const CACHE_NAME = 'sack-one-cache-v2'; // Alterado para v2 para incluir limpeza e novos ficheiros
+// O nome do Cache. Mude para v3 se já tiver implementado a v2.
+const CACHE_NAME = 'sack-one-cache-v3'; 
 
 // A lista de todos os ficheiros críticos para o site funcionar offline
 const urlsToCache = [
     '/',
     '/index.html',
-    '/manifest.json', // Ficheiro manifest
-    '/favicon.png', // O ícone do site
+    // CORRIGIDO: Adicionando o Manifest, que é essencial para o PWA!
+    '/manifest.json', 
+    '/favicon.png', 
     
-    // Imagens Essenciais (Inferencia a partir do seu HTML)
+    // Fontes (A fonte principal do site para carregamento offline)
+    'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap',
+    
+    // Imagens Essenciais (Adicione aqui todos os ficheiros de imagem que usa)
     '/images/mourinho.jpg',
     '/images/trophies/champions.png',
     '/images/trophies/europa.png',
     '/images/trophies/league-pt.png',
     '/images/trophies/cup-pt.png',
     '/images/trophies/supercup-pt.png',
-    // Adicione aqui os restantes ficheiros de imagem (trophies)
-    
-    // Fontes (A fonte principal do site para carregamento offline)
-    'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap',
+    // ... Adicione os restantes ficheiros de troféus e outras imagens aqui ...
 ];
 
 // 1. INSTALAÇÃO: Armazena os ficheiros essenciais no cache
 self.addEventListener('install', event => {
-    // self.skipWaiting() garante que o novo Service Worker assume o controlo imediatamente
     self.skipWaiting(); 
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -59,7 +59,7 @@ self.addEventListener('activate', event => {
         caches.keys().then(cacheNames => {
             return Promise.all(
                 cacheNames.map(cacheName => {
-                    // Verifica se o nome do cache é diferente do nome atual (CACHE_NAME)
+                    // Se o nome do cache não for o nome atual, ele é removido.
                     if (cacheWhitelist.indexOf(cacheName) === -1) {
                         console.log('Removendo cache antiga:', cacheName);
                         return caches.delete(cacheName);
