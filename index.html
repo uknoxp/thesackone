@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     
-    <link rel="icon" type="image/png" href="favicon.png"> 
+    <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="manifest" href="/manifest.json"> 
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVTW5TR4M8"></script>
     <script>
@@ -870,4 +871,69 @@
         
     </script>
 </body>
+<script>
+    // ----------------------------------------------------
+    // NOVO: 1. REGISTO DO SERVICE WORKER (O Super-Carteiro)
+    // ----------------------------------------------------
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('Service Worker Registado com sucesso! Scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.log('Falha no registo do Service Worker:', error);
+                });
+        });
+    }
+
+    // ----------------------------------------------------
+    // O seu código original para o 'deferredPrompt' começa aqui
+    // ----------------------------------------------------
+    let deferredPrompt;
+    const modal = document.getElementById('pwa-install-modal');
+    const installButton = document.getElementById('pwa-install-button');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // ... (o resto do seu código de instalação) ...
+        e.preventDefault();
+        deferredPrompt = e;
+
+        if (localStorage.getItem('pwaDismissed') !== 'true') {
+            applyTranslation();
+            modal.style.display = 'flex';
+        }
+    });
+
+    installButton.addEventListener('click', () => {
+        // ... (o resto do seu código de instalação) ...
+    });
+    
+    // ... (o resto do seu código original) ...
+    // ... (incluindo o código que me enviou por último) ...
+
+                    });
+            } else {
+                // Mensagem fallback (se o PWA não estiver pronto ou não for suportado)
+                alert(langData.fallback); 
+            }
+        });
+
+        window.addEventListener('load', () => {
+            // Se o deferredPrompt já tiver sido definido (PWA pronto), o modal já estará visível
+            // Se não, vamos esperar 3 segundos e verificar novamente, caso o evento 'beforeinstallprompt' demore a disparar
+            if (!deferredPrompt) {
+                 setTimeout(function() {
+                     if (!deferredPrompt && localStorage.getItem('pwaDismissed') !== 'true') {
+                        // Mostra o modal, mas o botão de instalar dará a mensagem fallback
+                        applyTranslation();
+                        modal.style.display = 'flex';
+                     }
+                 }, 3000); 
+            }
+        });
+        
+    </script>
+</body>
 </html>
+
