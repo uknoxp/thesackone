@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     
     <link rel="icon" type="image/png" href="favicon.png">
-        <link rel="manifest" href="/manifest.json"> 
+    <link rel="manifest" href="/manifest.json"> 
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVTW5TR4M8"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer ||
+      [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
@@ -20,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-primary: #1a1a1a; 
+            --color-primary: #1a1a1a;
             --color-secondary: #DAA520; 
             --color-text: #f0f0f0;
             --color-background: #ffffff;
@@ -46,7 +47,7 @@
 
         /* Estilo para a imagem de Mourinho */
         #mourinho-photo {
-            width: 150px; 
+            width: 150px;
             height: 150px; 
             border-radius: 50%; 
             object-fit: cover;
@@ -97,7 +98,7 @@
             margin-top: 30px;
             color: var(--color-secondary);
             /* Adicionado margem inferior para separar do total de dinheiro */
-            margin-bottom: 40px; 
+            margin-bottom: 40px;
         }
 
         .benfica-status p {
@@ -118,7 +119,7 @@
             padding: 40px 20px;
             border-top: 5px solid var(--color-secondary);
             text-align: left;
-            margin-top: 60px; 
+            margin-top: 60px;
         }
         
         .individual-awards h3 {
@@ -169,7 +170,7 @@
 
         /* TIMELINE SECTION */
         .timeline-section {
-            padding: 60px 20px 0 20px; 
+            padding: 60px 20px 0 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -191,7 +192,7 @@
             margin-bottom: 30px;
             text-align: left;
             position: relative;
-            margin-left: var(--timeline-offset); 
+            margin-left: var(--timeline-offset);
         }
 
         .timeline-card h3 {
@@ -202,7 +203,7 @@
         }
 
         .timeline-card.fired {
-            border-left-color: var(--color-secondary); 
+            border-left-color: var(--color-secondary);
         }
 
         /* THE YEAR (DATA-YEAR) */
@@ -257,12 +258,12 @@
             align-items: center;
             text-align: center;
             /* Corrigido: Usar flex-basis para melhor responsividade e alinhamento */
-            flex-basis: 80px; 
+            flex-basis: 80px;
             min-width: 60px;
         }
 
         .trophy-icon {
-            width: 40px; 
+            width: 40px;
             height: 40px;
             object-fit: contain;
         }
@@ -301,7 +302,7 @@
         
         /* PWA SUGGESTION MODAL STYLES */
         .pwa-modal {
-            display: none; 
+            display: none;
             position: fixed;
             left: 0;
             top: 0;
@@ -397,13 +398,15 @@
 
         /* CORREÇÃO 3: Mobile Adjustments para a Timeline */
         @media (max-width: 768px) {
-            .hero-section h1 { font-size: 2.5em; }
-            #money-total { font-size: 3em; }
+            .hero-section h1 { font-size: 2.5em;
+            }
+            #money-total { font-size: 3em;
+            }
             .timeline-card {
                 /* Reduz a margem para caber a data */
-                margin-left: 20px; 
+                margin-left: 20px;
                 /* Mais padding à esquerda para dar espaço ao ponto da timeline */
-                padding: 20px 15px 20px 30px; 
+                padding: 20px 15px 20px 30px;
             }
             .timeline-card::before {
                 /* Remove o fundo e move a data para a esquerda da linha */
@@ -416,17 +419,17 @@
                 background: none; 
                 color: var(--color-primary); 
                 padding: 0;
-                white-space: nowrap; 
+                white-space: nowrap;
             }
             .timeline-card::after {
                 /* Ajusta o ponto para a nova margem */
-                left: 0px; 
+                left: 0px;
                 top: 25px;
                 width: 12px;
                 height: 12px;
             }
             .timeline-card h3 {
-                padding-left: 5px; 
+                padding-left: 5px;
             }
             .awards-grid {
                 grid-template-columns: 1fr;
@@ -443,7 +446,8 @@
         <h2>A Global Timeline of Success and Compensation</h2>
         
         <div class="benfica-status">
-            <p>MOURINHO IS AT BENFICA SINCE SEPTEMBER 18, 2025.</p>
+            <p>MOURINHO IS AT BENFICA SINCE SEPTEMBER 
+            18, 2025.</p>
             <p style="font-size: 1.5em; margin: 10px 0;">HIS SURVIVAL CLOCK SHOWS:</p>
             <div id="benfica-timer"></div>
         </div>
@@ -455,6 +459,7 @@
     <div class="timeline-section">
         <h2>Career Timeline (Principal Manager)</h2>
         
+  
         <div class="timeline-card" data-year="2000">
             <h3>BENFICA (Portugal) - 1st Spell</h3>
             <p><strong>Duration:</strong> 2.5 Months (10 Games)</p>
@@ -462,6 +467,7 @@
                 <p style="padding-left: 0;">No Trophies Won.</p>
             </div>
             <p><strong>Status:</strong> Voluntary Resignation</p>
+ 
         </div>
 
         <div class="timeline-card" data-year="2001-2002">
@@ -470,6 +476,7 @@
             <div class="trophies-container">
                 <p style="padding-left: 0;">No Trophies Won.</p>
             </div>
+         
             <p><strong>Status:</strong> Mutual Consent (Left for FC Porto)</p>
         </div>
 
@@ -478,31 +485,37 @@
             <p><strong>Duration:</strong> 2 Years, 5 Months</p>
             <div class="trophies-container">
                 <div class="trophy-item">
+             
                     <img src="/images/trophies/champions.png" alt="Champions League Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">Champions League</span>
                 </div>
                 <div class="trophy-item">
+            
                     <img src="/images/trophies/europa.png" alt="UEFA Cup Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">UEFA Cup</span>
                 </div>
                 <div class="trophy-item">
+           
                     <img src="/images/trophies/league-pt.png" alt="Portuguese League Trophy" class="trophy-icon">
                     <span class="trophy-count">2</span>
                     <span class="trophy-name">Portuguese League</span>
                 </div>
                 <div class="trophy-item">
+          
                     <img src="/images/trophies/cup-pt.png" alt="Portuguese Cup Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">Portuguese Cup</span>
                 </div>
                 <div class="trophy-item">
+         
                     <img src="/images/trophies/supercup-pt.png" alt="Portuguese Super Cup Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">Portuguese Super Cup</span>
                 </div>
             </div>
+           
             <p><strong>Status:</strong> Mutual Consent (Chelsea Paid Clause)</p>
         </div>
 
@@ -511,26 +524,31 @@
             <p><strong>Duration:</strong> 3 Years, 3 Months</p>
             <div class="trophies-container">
                 <div class="trophy-item">
+             
                     <img src="/images/trophies/league-uk.png" alt="Premier League Trophy" class="trophy-icon">
                     <span class="trophy-count">2</span>
                     <span class="trophy-name">Premier League</span>
                 </div>
                 <div class="trophy-item">
+            
                     <img src="/images/trophies/cup-uk-national.png" alt="FA Cup Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">FA Cup</span>
                 </div>
                 <div class="trophy-item">
+           
                     <img src="/images/trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
                     <span class="trophy-count">2</span>
                     <span class="trophy-name">English League Cup</span>
                 </div>
                 <div class="trophy-item">
+         
                     <img src="/images/trophies/supercup-uk.png" alt="Community Shield Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">English Super Cup</span>
                 </div>
             </div>
+            
             <p><strong>Status:</strong> **FIRED** (2007)</p>
             <span class="indemnization">COMPENSATION: € 20.9 Million</span>
         </div>
@@ -540,26 +558,31 @@
             <p><strong>Duration:</strong> 2 Years</p>
             <div class="trophies-container">
                 <div class="trophy-item">
+      
                     <img src="/images/trophies/champions.png" alt="Champions League Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">Champions League</span>
                 </div>
                 <div class="trophy-item">
+     
                     <img src="/images/trophies/league-it.png" alt="Serie A Trophy" class="trophy-icon">
                     <span class="trophy-count">2</span>
                     <span class="trophy-name">Italian League (Serie A)</span>
                 </div>
                 <div class="trophy-item">
+  
                     <img src="/images/trophies/cup-it-national.png" alt="Coppa Italia Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">Italian Cup (Coppa Italia)</span>
                 </div>
+                
                 <div class="trophy-item">
                     <img src="/images/trophies/supercup-it.png" alt="Italian Super Cup Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">Italian Super Cup</span>
                 </div>
             </div>
+ 
             <p><strong>Status:</strong> Mutual Consent (Left for Real Madrid)</p>
         </div>
 
@@ -568,21 +591,25 @@
             <p><strong>Duration:</strong> 3 Years</p>
             <div class="trophies-container">
                 <div class="trophy-item">
+      
                     <img src="/images/trophies/league-es.png" alt="La Liga Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">Spanish League (La Liga)</span>
                 </div>
                 <div class="trophy-item">
+   
                     <img src="/images/trophies/cup-es-national.png" alt="Copa del Rey Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">Copa del Rey</span>
                 </div>
-                <div class="trophy-item">
+                <div 
+                    class="trophy-item">
                     <img src="/images/trophies/supercup-es.png" alt="Spanish Super Cup Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">Spanish Super Cup</span>
                 </div>
             </div>
+  
             <p><strong>Status:</strong> **FIRED** (2013)</p>
             <span class="indemnization">COMPENSATION: € 19.7 Million</span>
         </div>
@@ -591,16 +618,19 @@
             <h3>CHELSEA (England) - 2nd Spell</h3>
             <p><strong>Duration:</strong> 2 Years, 5 Months</p>
             <div class="trophies-container">
+        
                 <div class="trophy-item">
                     <img src="/images/trophies/league-uk.png" alt="Premier League Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">Premier League</span>
                 </div>
+       
                 <div class="trophy-item">
                     <img src="/images/trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">English League Cup</span>
                 </div>
+     
             </div>
             <p><strong>Status:</strong> **FIRED** (2015)</p>
             <span class="indemnization">COMPENSATION: € 9.6 Million</span>
@@ -610,20 +640,24 @@
             <h3>MANCHESTER UNITED (England)</h3>
             <p><strong>Duration:</strong> 2 Years, 6 Months</p>
             <div class="trophies-container">
+ 
                 <div class="trophy-item">
                     <img src="/images/trophies/europa.png" alt="Europa League Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">Europa League</span>
+                
                 </div>
                 <div class="trophy-item">
                     <img src="/images/trophies/cup-uk-league.png" alt="League Cup Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">English League Cup</span>
+              
                 </div>
                 <div class="trophy-item">
                     <img src="/images/trophies/supercup-uk.png" alt="Community Shield Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
                     <span class="trophy-name">English Super Cup</span>
+            
                 </div>
             </div>
             <p><strong>Status:</strong> **FIRED** (2018)</p>
@@ -633,6 +667,7 @@
         <div class="timeline-card fired" data-year="2019-2021">
             <h3>TOTTENHAM HOTSPUR (England)</h3>
             <p><strong>Duration:</strong> 1 Year, 5 Months</p>
+     
             <div class="trophies-container">
                 <p style="padding-left: 0;">No Trophies Won.</p>
             </div>
@@ -641,12 +676,14 @@
         </div>
 
         <div class="timeline-card fired" data-year="2021-2024">
+           
             <h3>AS ROMA (Italy)</h3>
             <p><strong>Duration:</strong> 2 Years, 6 Months</p>
             <div class="trophies-container">
                 <div class="trophy-item">
                     <img src="/images/trophies/conference.png" alt="Conference League Trophy" class="trophy-icon">
                     <span class="trophy-count">1</span>
+     
                     <span class="trophy-name">Conference League</span>
                 </div>
             </div>
@@ -655,13 +692,15 @@
         </div>
 
         <div class="timeline-card fired" data-year="2024-2025">
+     
             <h3>FENERBAHÇE (Turkey)</h3>
             <p><strong>Duration:</strong> 1 Year, 2 Months</p>
             <div class="trophies-container">
                 <p style="padding-left: 0;">No Trophies Won.</p>
             </div>
             <p><strong>Status:</strong> **FIRED** (Sept 2025)</p>
-            <span class="indemnization">COMPENSATION: € 15.0 Million</span>
+            <span class="indemnization">COMPENSATION: € 15.0 
+            Million</span>
         </div>
         
         <div class="timeline-card current" data-year="2025-??">
@@ -669,10 +708,12 @@
             <p><strong>Date Started:</strong> September 18, 2025</p>
             <div class="trophies-container">
                 <p style="padding-left: 0;">Trophies: TBD</p>
+         
             </div>
             <p><strong>Contract Until:</strong> June 2027</p>
             <p><strong>Potential Compensation:</strong> The 8th Invoice is Loading...</p>
-            <span class="indemnization" style="color: var(--color-primary); font-size: 1.5em;">WAITING...</span>
+            <span class="indemnization" style="color: var(--color-primary);
+            font-size: 1.5em;">WAITING...</span>
         </div>
     </div>
     
@@ -682,24 +723,29 @@
             
             <div class="award-category">
                 <h4>World's Best Awards (FIFA / IFFHS / World Soccer)</h4>
+         
                 <ul>
                     <li>**Coach of the Year (FIFA):** 2010</li>
                     <li>**World's Best Club Coach (IFFHS):** 2004, 2005, 2010, 2012</li>
                     <li>**World Soccer Magazine Manager of the Year:** 2004, 2005, 2010</li>
+           
                     <li>**Onze d'Or Coach of the Year:** 2005</li>
                     <li>**IFFHS World's Best Coach of the 21st Century:** 2021</li>
                 </ul>
             </div>
 
             <div class="award-category">
+                
                 <h4>European and National Awards</h4>
                 <ul>
                     <li>**UEFA Coach of the Year:** 2003, 2004</li>
                     <li>**UEFA Team of the Year:** 2003, 2004, 2005, 2010</li>
-                    <li>**Premier League Manager of the Season:** 2005, 2006, 2015</li>
+                    <li>**Premier League Manager of the Season:** 2005, 
+                    2006, 2015</li>
                     <li>**Oscar del Calcio Coach of the Year:** 2009, 2010</li>
                     <li>**Panchina d'Oro (Italian Coach of the Year):** 2010</li>
                     <li>**Miguel Muñoz Trophy (Spanish Coach of the Year):** 2011, 2012</li>
+               
                     <li>**Conference League (The Special One Cup):** 2022</li>
                 </ul>
             </div>
@@ -707,14 +753,17 @@
             <div class="award-category">
                 <h4>Recognition and Historical Rankings</h4>
                 <ul>
+             
                     <li>**Portuguese Coach of the 21st Century (FPF):** 2015</li>
                     <li>**Order of Prince Henry (Portugal):** 2005</li>
                     <li>**BBC Sports Personality of the Year Coach Award:** 2005</li>
                     <li>**La Gazzetta dello Sport Coach of the Year:** 2010</li>
+     
                     <li>**3rd Greatest Manager of All Time (World Soccer):** 2013</li>
                     <li>**9th Greatest Manager of All Time (ESPN):** 2013</li>
                     <li>**13th Greatest Manager of All Time (France Football):** 2019</li>
                 </ul>
+      
             </div>
 
         </div>
@@ -728,8 +777,10 @@
 
     <div id="pwa-suggestion-modal" class="pwa-modal">
         <div class="pwa-modal-content">
+         
             <h4 id="pwa-title">Add to Home Screen?</h4>
-            <p id="pwa-message">Get the full experience! Add this page to your home screen for quick, fullscreen access, just like an app.</p>
+            <p id="pwa-message">Get the full experience!
+            Add this page to your home screen for quick, fullscreen access, just like an app.</p>
             <button id="pwa-install-button">Install App</button>
             <button id="pwa-close-button" class="close-btn">No, thanks.</button>
         </div>
@@ -740,7 +791,6 @@
         // Start date of Mourinho's tenure at Benfica: September 18, 2025 (10:00:00 AM WEST)
         const benficaStartDate = new Date('September 18, 2025 10:00:00').getTime();
         const counterElement = document.getElementById('benfica-timer');
-
         function updateCounter() {
             // Utiliza a hora atual do PC do utilizador
             const now = new Date().getTime();
@@ -751,19 +801,18 @@
             const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
             // Output in Days, Hours, Minutes, Seconds format
             counterElement.innerHTML = 
                 `${days} DAYS, ${hours} HOURS, ${minutes} MINUTES, ${seconds} SECONDS`;
         }
 
         // CHAMA A FUNÇÃO PELA PRIMEIRA VEZ E DEPOIS INICIA O INTERVALO DE 1000ms (1 segundo)
-        updateCounter(); 
+        updateCounter();
         setInterval(updateCounter, 1000);
 
         // --- 2. MULTI-LANGUAGE PWA SUGGESTION MODAL (CORRIGIDO) ---
         
-        let deferredPrompt; // Variável para armazenar o evento de instalação
+        let deferredPrompt; // Variável declarada apenas UMA VEZ
         
         // O NAVEGADOR DISPARA ESTE EVENTO QUANDO PODE INSTALAR O PWA
         window.addEventListener('beforeinstallprompt', (e) => {
@@ -775,7 +824,8 @@
                  modal.style.display = 'flex';
             }
         });
-
+        
+        // Objeto Translations
         const translations = {
             'pt': {
                 title: "Adicionar ao Ecrã Principal?",
@@ -791,7 +841,7 @@
                 close: "No, thanks.",
                 fallback: "Please follow your browser's instructions to 'Add to Home Screen' or 'Install App'."
             },
-             'es': {
+            'es': {
                 title: "¿Añadir a la Pantalla de Inicio?",
                 message: "¡Obtén la experiencia completa! Añade esta página a tu pantalla de inicio para un acceso rápido y a pantalla completa, como una aplicación.",
                 install: "Instalar Aplicación",
@@ -800,27 +850,26 @@
             },
             'fr': {
                 title: "Ajouter à l'écran d'accueil?",
-                message: "Bénéficiez de l'expérience complète! Ajoutez cette página à votre écran d'accueil para un accès rápido et en plein écran, como uma application.",
+                message: "Bénéficiez de l'expérience completa! Ajoutez cette página à votre écran d'accueil para un accès rápido et en plein écran, como uma application.",
                 install: "Installer l'application",
                 close: "Non, merci.",
                 fallback: "Veuillez suivre les instructions de votre navigateur pour 'Ajouter à l'écran d'accueil' ou 'Installer l'application'."
             },
             'it': {
                 title: "Aggiungi alla schermata iniziale?",
-                message: "Ottieni l'esperienza completa! Aggiungi questa pagina alla tua schermata iniziale per un accesso rapido e a schermo intero, proprio come un'app.",
+                message: "Ottieni l'esperienza completa! Aggiungi questa pagina alla tua schermata iniziale per un accesso rapido e a schermo intero, proprio como un'app.",
                 install: "Installa App",
                 close: "No, grazie.",
                 fallback: "Si prega di seguire le istruzioni del browser per 'Aggiungi a schermata iniziale' o 'Installa App'."
             },
         };
 
-        const modal = document.getElementById('pwa-suggestion-modal');
-        const installButton = document.getElementById('pwa-install-button');
+        const modal = document.getElementById('pwa-suggestion-modal'); // Variável declarada apenas UMA VEZ
+        const installButton = document.getElementById('pwa-install-button'); // Variável declarada apenas UMA VEZ
         const closeButton = document.getElementById('pwa-close-button');
 
         let userLang = (navigator.language || navigator.userLanguage).slice(0, 2).toLowerCase();
         const langData = translations[userLang] || translations['en'];
-
         function applyTranslation() {
             document.getElementById('pwa-title').textContent = langData.title;
             document.getElementById('pwa-message').textContent = langData.message;
@@ -834,7 +883,6 @@
         }
 
         closeButton.addEventListener('click', dismissModal);
-        
         installButton.addEventListener('click', () => {
             dismissModal();
             
@@ -854,13 +902,12 @@
                 alert(langData.fallback); 
             }
         });
-
         window.addEventListener('load', () => {
             // Se o deferredPrompt já tiver sido definido (PWA pronto), o modal já estará visível
             // Se não, vamos esperar 3 segundos e verificar novamente, caso o evento 'beforeinstallprompt' demore a disparar
             if (!deferredPrompt) {
                  setTimeout(function() {
-                     if (!deferredPrompt && localStorage.getItem('pwaDismissed') !== 'true') {
+                    if (!deferredPrompt && localStorage.getItem('pwaDismissed') !== 'true') {
                         // Mostra o modal, mas o botão de instalar dará a mensagem fallback
                         applyTranslation();
                         modal.style.display = 'flex';
@@ -869,65 +916,20 @@
             }
         });
         
+        // ====================================================================
+        // 3. REGISTO DO SERVICE WORKER (Movido do bloco duplicado e integrado)
+        // ====================================================================
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker Registado com sucesso! Scope:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Falha no registo do Service Worker:', error);
+                    });
+            });
+        }
     </script>
-</body>
-<script>
-    // ----------------------------------------------------
-    // NOVO: 1. REGISTO DO SERVICE WORKER (O Super-Carteiro)
-    // ----------------------------------------------------
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                    console.log('Service Worker Registado com sucesso! Scope:', registration.scope);
-                })
-                .catch(error => {
-                    console.log('Falha no registo do Service Worker:', error);
-                });
-        });
-    }
-
-    // ----------------------------------------------------
-    // O seu código original para o 'deferredPrompt' começa aqui
-    // ----------------------------------------------------
-    let deferredPrompt;
-    const modal = document.getElementById('pwa-install-modal');
-    const installButton = document.getElementById('pwa-install-button');
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-        // ... (o resto do seu código de instalação) ...
-        e.preventDefault();
-        deferredPrompt = e;
-
-        if (localStorage.getItem('pwaDismissed') !== 'true') {
-            applyTranslation();
-            modal.style.display = 'flex';
-        }
-    });
-
-    installButton.addEventListener('click', () => {
-        // ... (o resto do seu código de instalação) ...
-    });
-    
-    // ... (o seu código original para a gestão da instalação da PWA) ...
-
-    // Este é o bloco que me enviou por último, garantindo que está bem fechado:
-    // Começo do código de fallback
-    window.addEventListener('load', () => {
-        // Se o deferredPrompt já tiver sido definido (PWA pronto), o modal já estará visível
-        // Se não, vamos esperar 3 segundos...
-        if (!deferredPrompt) {
-            setTimeout(function() {
-                if (!deferredPrompt && localStorage.getItem('pwaDismissed') !== 'true') {
-                    // Mostra o modal, mas o botão de instalar dará a mensagem fallback
-                    applyTranslation();
-                    modal.style.display = 'flex';
-                }
-            }, 3000); 
-        }
-    });
-    // Fim do código de fallback
-    
-</script>
 </body>
 </html>
