@@ -909,31 +909,25 @@
         // ... (o resto do seu código de instalação) ...
     });
     
-    // ... (o resto do seu código original) ...
-    // ... (incluindo o código que me enviou por último) ...
+    // ... (o seu código original para a gestão da instalação da PWA) ...
 
-                    });
-            } else {
-                // Mensagem fallback (se o PWA não estiver pronto ou não for suportado)
-                alert(langData.fallback); 
-            }
-        });
-
-        window.addEventListener('load', () => {
-            // Se o deferredPrompt já tiver sido definido (PWA pronto), o modal já estará visível
-            // Se não, vamos esperar 3 segundos e verificar novamente, caso o evento 'beforeinstallprompt' demore a disparar
-            if (!deferredPrompt) {
-                 setTimeout(function() {
-                     if (!deferredPrompt && localStorage.getItem('pwaDismissed') !== 'true') {
-                        // Mostra o modal, mas o botão de instalar dará a mensagem fallback
-                        applyTranslation();
-                        modal.style.display = 'flex';
-                     }
-                 }, 3000); 
-            }
-        });
-        
-    </script>
+    // Este é o bloco que me enviou por último, garantindo que está bem fechado:
+    // Começo do código de fallback
+    window.addEventListener('load', () => {
+        // Se o deferredPrompt já tiver sido definido (PWA pronto), o modal já estará visível
+        // Se não, vamos esperar 3 segundos...
+        if (!deferredPrompt) {
+            setTimeout(function() {
+                if (!deferredPrompt && localStorage.getItem('pwaDismissed') !== 'true') {
+                    // Mostra o modal, mas o botão de instalar dará a mensagem fallback
+                    applyTranslation();
+                    modal.style.display = 'flex';
+                }
+            }, 3000); 
+        }
+    });
+    // Fim do código de fallback
+    
+</script>
 </body>
 </html>
-
